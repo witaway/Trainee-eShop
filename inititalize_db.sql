@@ -55,15 +55,14 @@ CREATE TABLE products
     PRIMARY KEY (id)
 );
 
-CREATE TABLE product_marks
+CREATE TABLE favourites
 (
 	id         INT      NOT NULL AUTO_INCREMENT,
 	product_id INT      NOT NULL,
     user_id    INT      NOT NULL,
-    mark       SMALLINT NOT NULL CHECK (mark between 1 and 5),
-	PRIMARY KEY (id),
+    PRIMARY KEY (id),
     FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id)    REFERENCES users(id)
 );
 
 -- ok
