@@ -59,3 +59,5 @@ CREATE TABLE product_marks
 	FOREIGN KEY (product_id) REFERENCES products(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+-- ok
