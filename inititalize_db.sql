@@ -4,7 +4,7 @@ CREATE TABLE users
 (
 	id           INT          NOT NULL        AUTO_INCREMENT,
     username     VARCHAR(100) NOT NULL,
-    email        VARCHAR(100) NOT NULL,
+    email        VARCHAR(255) NOT NULL,
     password     TINYBLOB     NOT NULL,
     wanna_delete BOOL         DEFAULT false,
     PRIMARY KEY (id)
@@ -13,14 +13,16 @@ CREATE TABLE users
 CREATE TABLE roles
 (
 	id        INT          NOT NULL AUTO_INCREMENT,
-    role_name VARCHAR(100) NOT NULL,
+    role_name VARCHAR(255) NOT NULL,
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE users_roles
 (
+	id      INT NOT NULL AUTO_INCREMENT,
 	user_id INT NOT NULL,
     role_id INT NOT NULL,
+    PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (role_id) REFERENCES roles(id)
 );
@@ -34,8 +36,10 @@ CREATE TABLE routes
 
 CREATE TABLE routes_access
 (
+	id       INT NOT NULL AUTO_INCREMENT,
 	route_id INT NOT NULL,
     role_id  INT NOT NULL,
+    PRIMARY KEY (id),
     FOREIGN KEY (route_id) REFERENCES routes(id),
     FOREIGN KEY (role_id)  REFERENCES roles(id)
 );
@@ -53,10 +57,12 @@ CREATE TABLE products
 
 CREATE TABLE product_marks
 (
+	id         INT      NOT NULL AUTO_INCREMENT,
 	product_id INT      NOT NULL,
     user_id    INT      NOT NULL,
     mark       SMALLINT NOT NULL CHECK (mark between 1 and 5),
-	FOREIGN KEY (product_id) REFERENCES products(id),
+	PRIMARY KEY (id),
+    FOREIGN KEY (product_id) REFERENCES products(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
