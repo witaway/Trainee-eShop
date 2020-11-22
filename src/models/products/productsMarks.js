@@ -1,0 +1,27 @@
+const { DataTypes } = require('sequelize');
+const sequelize = require('../../sequelize')
+
+const ProductsMarks = sequelize.define('productsMarks', {
+    'id': {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    'mark': {
+        type: DataTypes.INTEGER,
+        validate: {
+            min: 1,
+            max: 5
+        }
+    }
+}, {
+    tableName: 'products_marks',
+    timestamps: false,
+})
+
+ProductsMarks.associate = (models) => {
+    ///
+}
+
+module.exports = ProductsMarks
