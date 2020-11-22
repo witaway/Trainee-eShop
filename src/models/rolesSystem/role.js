@@ -18,7 +18,7 @@ const Role = sequelize.define('role', {
 })
 
 Role.associate = (models) => {
-    ///
+    models;
 }
 
 module.exports = Role

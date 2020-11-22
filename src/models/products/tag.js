@@ -20,7 +20,7 @@ const Tag = sequelize.define('tag', {
 })
 
 Tag.associate = (models) => {
-    ///
+    models;
 }
 
 module.exports = Tag

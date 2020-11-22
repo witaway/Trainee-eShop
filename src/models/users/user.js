@@ -40,7 +40,7 @@ const User = sequelize.define('user', {
 })
 
 User.associate = (models) => {
-    ///
+    models;
 }
 
 module.exports = User

@@ -14,7 +14,8 @@ const RoutesAccess = sequelize.define('routesAccess', {
 })
 
 RoutesAccess.associate = (models) => {
-    ///
+    models.Role.belongsToMany(models.Rout, { through: models.RoutesAccess })
+    models.Rout.belongsToMany(models.Role, { through: models.RoutesAccess })
 }
 
 module.exports = RoutesAccess

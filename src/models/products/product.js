@@ -39,7 +39,7 @@ const Product = sequelize.define('product', {
 })
 
 Product.associate = (models) => {
-    ///
+    models;
 }
 
 module.exports = Product

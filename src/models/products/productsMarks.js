@@ -21,7 +21,8 @@ const ProductsMarks = sequelize.define('productsMarks', {
 })
 
 ProductsMarks.associate = (models) => {
-    ///
+    models.Product.belongsToMany(models.User, { through: models.ProductsMarks })
+    models.User.belongsToMany(models.Product, { through: models.ProductsMarks })
 }
 
 module.exports = ProductsMarks

@@ -18,7 +18,7 @@ const Rout = sequelize.define('rout', {
 })
 
 Rout.associate = (models) => {
-    ///
+    models;
 }
 
 module.exports = Rout

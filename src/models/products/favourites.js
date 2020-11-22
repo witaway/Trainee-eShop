@@ -14,7 +14,8 @@ const Favourites = sequelize.define('favourites', {
 })
 
 Favourites.associate = (models) => {
-    ///
+    models.Product.belongsToMany(models.User, { through: models.Favourites })
+    models.User.belongsToMany(models.Product, { through: models.Favourites })
 }
 
 module.exports = Favourites
