@@ -7,6 +7,6 @@ module.exports = function() {
         model.associate && model.associate(models)
     })
 
-    sequelize.sync({ force: true })
+    sequelize.sync({ alter: true })
 
 }
