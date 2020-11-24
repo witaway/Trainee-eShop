@@ -10,4 +10,12 @@ const sequelize = new Sequelize(dbName, dbUser, dbPass, {
     host: dbHost,
 });
 
+sequelize.authenticate()
+    .then(() => {
+        console.log('INFO - Database connected')
+    })
+    .catch((err) => {
+        console.log('Error - Unable to connect to the database: ', err)
+    })
+
 module.exports = sequelize

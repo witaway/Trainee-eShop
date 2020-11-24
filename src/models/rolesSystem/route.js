@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../sequelize')
+const sequelize = require('../../loaders/database')
 
-const Rout = sequelize.define('rout', {
+const Route = sequelize.define('rout', {
     'id': {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -17,8 +17,8 @@ const Rout = sequelize.define('rout', {
     timestamps: false
 })
 
-Rout.associate = (models) => {
+Route.associate = (models) => {
     models;
 }
 
-module.exports = Rout
+module.exports = Route
