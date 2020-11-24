@@ -1,13 +1,26 @@
-require('dotenv').config()
-
 const express = require('express')
-const app = express()
-const port = 3000
+const server  = express()
 
-app.get('/', (req, res) => {
-    res.send('Hello world!!! Another one.')
-});
+const setupDotEnv         = require('./loaders/dotenv')
+const setupModels         = require('./loaders/models')
+const setupExpressModules = require('./loaders/expressModules')
+const setupRoutes         = require('./loaders/routes')
+const setupStartServer    = require('./loaders/startServer')
 
-app.listen(port, () => {
-    console.log(`Stated on http://localhost:${port}`)
-})
+// Loads .env to process.environment
+setupDotEnv()
+
+// Makes all database stuff, loads models and associations between them
+// Also only after setupModels() you can export anything from /models 
+//               with confidence that everything will be fine
+setupModels()
+
+// Loads all server modules like logging, cookie parser and so on
+// TO DO
+setupExpressModules(server)
+
+// Loads routes
+setupRoutes(server)
+
+// Start server 
+setupStartServer(server)
