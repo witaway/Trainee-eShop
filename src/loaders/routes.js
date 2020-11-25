@@ -1,3 +1,3 @@
 module.exports = function(server) {
-    server
+    server.use('/products', require('../routes/product'))
 }
