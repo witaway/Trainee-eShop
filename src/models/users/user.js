@@ -10,13 +10,11 @@ const User = sequelize.define('user', {
     }, 
     'username': {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     'email': {
         type: DataTypes.STRING,
         allowNull: false,
-        uniqie: true,
         validate: {
             isEmail: true
         }
@@ -32,8 +30,15 @@ const User = sequelize.define('user', {
     }
 }, {
     tableName: 'users',
-    timestamps: true,
+    
+    indexes: [
+        {uniqie: true, fields: ['username']},
+        {uniqie: true, fields: ['email']}
+    ],
+    
     paranoid: true,
+    
+    timestamps: true,
     createdAt: true,
 	updatedAt: false,
 	deletedAt: true

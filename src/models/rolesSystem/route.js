@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../../loaders/database')
 
-const Route = sequelize.define('rout', {
+const Route = sequelize.define('route', {
     'id': {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -14,6 +14,9 @@ const Route = sequelize.define('rout', {
     }
 }, {
     tableName: 'routes',
+    indexes: [
+        {uniqie: true, fields: ['path']},
+    ],
     timestamps: false
 })
 
