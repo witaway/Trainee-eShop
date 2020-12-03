@@ -7,11 +7,11 @@ class ProductRepository {
             'name':        body.name,
             'description': body.description,
             'imageUrl':    body.img || null,
-            'cost':        11,//body.cost,
+            'cost':        body.cost,
             'quantity':    body.quantity
         });
     }
-    
+
     static async getProduct(body){
         return Product.findOne({
             attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity'],
