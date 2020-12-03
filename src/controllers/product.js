@@ -10,7 +10,7 @@ class ProductController {
 		} catch (error) {
             return res
                 .status(404)
-                .json(error);
+                .json({'error': error.toString()})
 		}
 	}
 
@@ -22,7 +22,7 @@ class ProductController {
 		} catch (error) {
             return res
                 .status(404)
-                .json(error);
+                .json({'error': error.toString()})
 		}
 	}
 
@@ -34,7 +34,7 @@ class ProductController {
 		} catch (error) {
             return res
                 .status(404)
-                .json(error);
+                .json({'error': error.toString()})
 		}
 	}
 
@@ -46,7 +46,7 @@ class ProductController {
 		} catch (error) {
             return res
                 .status(404)
-                .json(error);
+                .json({'error': error.toString()})
         }
 	}
 
@@ -58,7 +58,7 @@ class ProductController {
 		} catch (error) {
             return res
                 .status(404)
-                .json(error);
+                .json({'error': error.toString()})
         }
     }
 }
