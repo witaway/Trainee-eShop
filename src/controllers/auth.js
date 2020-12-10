@@ -3,15 +3,9 @@ const UserRepository = require('../repositories/user')
 class AuthController {
     
 	static async register(req, res) {
-		try {
-            return res
-                .status(200)
-                .json(await UserRepository.register(req.body));
-		} catch (error) {
-            return res
-                .status(404)
-                .json({'error': error.toString()})
-		}
+		res
+            .status(200)
+            .json(await UserRepository.register(req.body));
     }
 
     static async login(req, res) {
