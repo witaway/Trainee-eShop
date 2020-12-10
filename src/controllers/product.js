@@ -1,35 +1,35 @@
-const ProductRepository = require('../repositories/product')
+const ProductService = require('../services/product')
 
 class ProductController {
 
     static async create(req, res) {
         res
             .status(201)
-            .json(await ProductRepository.createProduct(req.body));
+            .json(await ProductService.createProduct(req.body));
     }
 
     static async get(req, res) {
         res
             .status(200)
-            .json(await ProductRepository.getProduct(req.body));
+            .json(await ProductService.getProduct(req.body));
     }
 
     static async getAll(req, res) {
         res
             .status(200)
-            .json(await ProductRepository.getAllProducts());
+            .json(await ProductService.getAllProducts());
     }
 
     static async edit(req, res) {
         res
             .status(200)
-            .json(await ProductRepository.editProduct(req.body));
+            .json(await ProductService.editProduct(req.body));
     }
 
     static async delete(req, res) {
         res
             .status(200)
-            .json(await ProductRepository.deleteProduct(req.body));
+            .json(await ProductService.deleteProduct(req.body));
     }
 }
 

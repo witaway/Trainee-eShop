@@ -6,7 +6,6 @@ const sequelize = require('../loaders/database')
 class MarkRepository {
 
     static async setMark(body) {
-        console.log(body)
         // body.userId, body.productId, body.mark
         const mark = await ProductsMarks.findOne({
             where: {
@@ -29,7 +28,6 @@ class MarkRepository {
 
 
     static async getMark(body) {
-        console.log(body)
         // body.userId, body.productId
         const mark = await ProductsMarks.findOne({
             where: {
@@ -41,7 +39,6 @@ class MarkRepository {
     }
 
     static async deleteMark(body) {
-        console.log(body)
         // body.userId, body.productId
         const mark = await ProductsMarks.findOne({
             where: {
@@ -53,8 +50,6 @@ class MarkRepository {
     }
 
     static async getAllProductMarks(body) {
-        console.log('Here')
-        console.log(body)
         // body.productId
         return ProductsMarks.findAll({
             where: {
@@ -64,7 +59,6 @@ class MarkRepository {
     }
 
     static async getProductMarksAverage(body) {
-        console.log(body)
         // body.productId
         const marksSummary = await ProductsMarks.findOne({
             attributes: [
@@ -76,7 +70,7 @@ class MarkRepository {
             },
             raw: true
         });
-        console.log(marksSummary)
+        
         if(marksSummary.quantity === 0) {
             return { 'error': 'no marks on product' }
         } else {
