@@ -3,15 +3,13 @@ const UserRepository = require('../repositories/user')
 class AuthController {
   
     static async list(req, res) {
-        res
-            .status(200)
-            .json(await UserRepository.list(req.body));
+        const result = await UserRepository.list(req.body);
+        res.status(200).json(result);
     }
 
     static async get(req, res) {
-        res
-            .status(200)
-            .json(await UserRepository.get(req.body));
+        const result = await UserRepository.get(req.body);
+        res.status(200).json(result);
     }
 }
 

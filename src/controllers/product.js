@@ -3,33 +3,28 @@ const ProductService = require('../services/product')
 class ProductController {
 
     static async create(req, res) {
-        res
-            .status(201)
-            .json(await ProductService.createProduct(req.body));
+        const result = await ProductService.createProduct(req.body);
+        res.status(200).json(result);
     }
 
     static async get(req, res) {
-        res
-            .status(200)
-            .json(await ProductService.getProduct(req.body));
+        const result = await ProductService.getProduct(req.body);
+        res.status(200).json(result);
     }
 
     static async getAll(req, res) {
-        res
-            .status(200)
-            .json(await ProductService.getAllProducts());
+        const result = await ProductService.getAllProducts();
+        res.status(200).json(result);
     }
 
     static async edit(req, res) {
-        res
-            .status(200)
-            .json(await ProductService.editProduct(req.body));
+        const result = await ProductService.editProduct(req.body);
+        res.status(200).json(result);
     }
 
     static async delete(req, res) {
-        res
-            .status(200)
-            .json(await ProductService.deleteProduct(req.body));
+        const result = await ProductService.deleteProduct(req.body);
+        res.status(200).json(result);
     }
 }
 
