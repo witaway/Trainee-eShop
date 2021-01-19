@@ -1,10 +1,9 @@
 const User          = require('../models/users/user')
 const sequelize = require('../loaders/database')
 
-class MarkRepository {
+class UserRepository {
 
     static async register(body) {
-        console.log(body)
         // body.username, body.email, body.password
         const userByUsername = await User.findOne({
             where: {
@@ -45,4 +44,4 @@ class MarkRepository {
 
 }
 
-module.exports = MarkRepository
+module.exports = UserRepository
