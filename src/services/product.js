@@ -2,28 +2,28 @@ const ProductRepository = require('../repositories/product')
 
 class ProductService {
 
-    static async createProduct(body) {
-        const createdProduct = ProductRepository.createProduct(body)
+    static async createProduct(productObject) {
+        const createdProduct = ProductRepository.createProduct(productObject)
         return createdProduct
     }
 
-    static async getProduct(body) {
-        const product = ProductRepository.getProduct(body) 
+    static async getProduct(id) {
+        const product = ProductRepository.getProduct(id) 
         return product
     }
 
-    static async getAllProducts(body) {
-        const products = ProductRepository.getAllProducts(body)
+    static async getAllProducts() {
+        const products = ProductRepository.getAllProducts()
         return products
     }
 
-    static async editProduct(body) {
-        const newProduct = ProductRepository.editProduct(body)
+    static async editProduct(id, productObject) {
+        const newProduct = ProductRepository.editProduct(id, productObject)
         return newProduct
     }
 
-    static async deleteProduct(body) {
-        const deletedProduct = ProductRepository.deleteProduct(body)
+    static async deleteProduct(id) {
+        const deletedProduct = ProductRepository.deleteProduct(id)
         return deletedProduct
     }
 

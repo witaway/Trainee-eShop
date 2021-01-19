@@ -2,21 +2,21 @@ const Product = require('../models/products/product')
 
 class ProductRepository {
 
-    static async createProduct(body) {
+    static async createProduct(productObject) {
         return Product.create({ 
-            'name':        body.name,
-            'description': body.description,
-            'imageUrl':    body.img || null,
-            'cost':        body.cost,
-            'quantity':    body.quantity
+            'name':        productObject.name,
+            'description': productObject.description,
+            'imageUrl':    productObject.img || null,
+            'cost':        productObject.cost,
+            'quantity':    productObject.quantity
         });
     }
 
-    static async getProduct(body){
+    static async getProduct(id) {
         return Product.findOne({
             attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity'],
             where: {
-                id: body.id,
+                id: id,
             }
         });
     }
@@ -27,19 +27,19 @@ class ProductRepository {
         });
     }
 
-    static async editProduct(body){
-        const post = await Product.findByPk(body.id)
+    static async editProduct(id, productObject) {
+        const post = await Product.findByPk(id)
         return post.update({
-            'name':        body.name,
-            'description': body.description,
-            'imageUrl':    body.img || null,
-            'cost':        body.cost,
-            'quantity':    body.quantity
+            'name':        productObject.name,
+            'description': productObject.description,
+            'imageUrl':    productObject.img || null,
+            'cost':        productObject.cost,
+            'quantity':    productObject.quantity
         });
     }
 
-    static async deleteProduct(body){
-        const post = await Product.findByPk(body.id);
+    static async deleteProduct(id) {
+        const post = await Product.findByPk(id);
         return post.destroy();
     }
 }
