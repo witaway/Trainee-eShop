@@ -3,7 +3,6 @@ const ProductRepository = require('../repositories/product')
 const UserRepository = require('../repositories/user')
 
 const RequestHandlingError = require('../helpers/error')
-const Product = require('../models/products/product')
 
 class MarkService {
 
