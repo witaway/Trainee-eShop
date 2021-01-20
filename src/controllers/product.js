@@ -14,7 +14,7 @@ class ProductController {
     }
 
     static async getByID(req, res) {
-        const result = await ProductService.getProduct(req.body.id);
+        const result = await ProductService.getProduct(req.params.id);
         res.status(200).json(result);
     }
 
@@ -34,8 +34,8 @@ class ProductController {
         res.status(200).json(result);
     }
 
-    static async edit(req, res) {
-        const result = await ProductService.editProduct(req.body.id, {
+    static async editByID(req, res) {
+        const result = await ProductService.editProduct(req.params.id, {
             name:        req.body.name,      
             description: req.body.description,  
             imageUrl:    req.body.image,
@@ -45,8 +45,8 @@ class ProductController {
         res.status(200).json(result);
     }
 
-    static async delete(req, res) {
-        const result = await ProductService.deleteProduct(req.body.id);
+    static async deleteByID(req, res) {
+        const result = await ProductService.deleteProduct(req.params.id);
         res.status(200).json(result);
     }
 }
