@@ -22,7 +22,7 @@ router.get('/',          validator(ProductSchemas.getWithList),   tryCatch(Produ
 router.get('/:id',       validator(ProductSchemas.getByID),       tryCatch(ProductController.getByID))
 router.delete('/:id',    validator(ProductSchemas.deleteByID),    tryCatch(ProductController.deleteByID))
 router.post('/',         validator(ProductSchemas.create),        tryCatch(ProductController.create))
-router.patch('/:id',     validator(ProductSchemas.editByID),      tryCatch(ProductController.editByID))
+router.put('/:id',       validator(ProductSchemas.editByID),      tryCatch(ProductController.editByID))
 
 
 router.use('/mark', MarkRouter)
