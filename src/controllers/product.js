@@ -5,7 +5,7 @@ class ProductController {
     static async create(req, res) {
         const result = await ProductService.createProduct({
             name:        req.body.name,      
-            description: req.body.description,  
+            description: req.body.description || '',  
             imageUrl:    req.body.image,
             cost:        req.body.cost,
             quantity:    req.body.quantity

@@ -1,5 +1,3 @@
-const { values } = require('sequelize/types/lib/operators')
-
 const MarkRepository = require('../repositories/mark')
 const ProductRepository = require('../repositories/product')
 const UserRepository = require('../repositories/user')
