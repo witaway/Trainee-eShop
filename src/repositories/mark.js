@@ -5,68 +5,63 @@ const sequelize = require('../loaders/database')
 
 class MarkRepository {
 
-    static async setMark(body) {
-        // body.userId, body.productId, body.mark
+    static async setMark(userId, productID, value) {
         const mark = await ProductsMarks.findOne({
             where: {
-                userId:    body.userId,
-                productId: body.productId
+                userId:    userId,
+                productId: productID
             }
         })
         if(mark == null) {
             return ProductsMarks.create({ 
-                userId:     body.userId,
-                productId:  body.productId,
-                mark:       body.mark
+                userId:     userId,
+                productId:  productID,
+                mark:       value
             })
         } else {
             return mark.update({
-                mark: body.mark    
+                mark: value    
             })
         }
     }
 
 
-    static async getMark(body) {
-        // body.userId, body.productId
+    static async getMark(userId, productID) {
         const mark = await ProductsMarks.findOne({
             where: {
-                userId:    body.userId,
-                productId: body.productId
+                userId:    userId,
+                productId: productID
             }
         })
         return mark
     }
 
-    static async deleteMark(body) {
-        // body.userId, body.productId
+    static async deleteMark(userId, productID) {
         const mark = await ProductsMarks.findOne({
             where: {
-                userId:    body.userId,
-                productId: body.productId
+                userId:    userId,
+                productId: productID
             }
         })
         return mark.destroy();
     }
 
-    static async getAllProductMarks(body) {
-        // body.productId
+    static async getAllProductMarks(productID) {
         return ProductsMarks.findAll({
             where: {
-                productId: body.productId
+                productId: productID
             }
         });
     }
 
-    static async getProductMarksAverage(body) {
-        // body.productId
+    static async getProductMarksAverage(productID) {
         const marksSummary = await ProductsMarks.findOne({
             attributes: [
                 [sequelize.fn('SUM', sequelize.col('mark')), 'sum'],
                 [sequelize.fn('COUNT', sequelize.col('mark')), 'quantity']
             ],
             where: {
-                productId: body.productId
+                productId: productID
             },
             raw: true
         });

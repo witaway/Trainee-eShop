@@ -33,11 +33,11 @@ class UserRepository {
         return User.findAll()
     }
 
-    static async get(body) {
+    static async getUser(userId) {
         // body.userId
         return User.findOne({
             where: {
-                userId: body.userId
+                userId: userId
             }
         })
     }
