@@ -2,7 +2,10 @@ const Joi = require('joi');
 
 module.exports = function(schema) {
     return function(req, res, next) {
-        const result = schema.validate(req.body)
+        const result = schema.validate({
+            body: req.body,
+            params: req.params
+        })
         if(!result.error) {
             req.body = result.value
             next()
