@@ -2,14 +2,15 @@ const Joi = require('joi');
 
 module.exports = function(schema) {
     return function(req, res, next) {
-        const validation = schema.validate(req.body)
-        if(!validation.error) {
+        const result = schema.validate(req.body)
+        if(!result.error) {
+            req.body = result.value
             next()
         } else {
             console.log('ITS IN VALIDATOR HELPER')
-            console.log(validation.error.details)
+            console.log(result.error.details)
             res.status(400).json({
-                message: validation.error.details[0].message
+                message: result.error.details[0].message
             });
         }
     }
