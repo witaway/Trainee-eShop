@@ -37,7 +37,7 @@ class UserRepository {
         // body.userId
         return User.findOne({
             where: {
-                userId: userId
+                id: userId
             }
         })
     }
