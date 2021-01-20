@@ -15,7 +15,7 @@ module.exports = {
     }),
 
     getWithList: Joi.object({
-        sort_by: Joi.string().valid('none', 'name', 'date_of_update', 'cost').default('none'),
+        sort_by: Joi.string().valid('none', 'name', 'date_of_update', 'cost'),
         order: Joi.string().valid('asc', 'desc').when('sort_by', {
             then: Joi.string().valid('asc', 'desc').required()
         }),
