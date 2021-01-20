@@ -2,6 +2,7 @@ const Product       = require('../models/products/product')
 const User          = require('../models/users/user')
 const ProductsMarks = require('../models/products/productsMarks')
 const sequelize = require('../loaders/database')
+const { Sequelize } = require('sequelize')
 
 class MarkRepository {
 
@@ -48,6 +49,9 @@ class MarkRepository {
 
     static async getAllProductMarks(productID) {
         return ProductsMarks.findAll({
+            attributes: [
+                ['id', 'markId'], 'mark', 'userId', 'productId'
+            ],
             where: {
                 productId: productID
             }
@@ -57,20 +61,14 @@ class MarkRepository {
     static async getProductMarksAverage(productID) {
         const marksSummary = await ProductsMarks.findOne({
             attributes: [
-                [sequelize.fn('SUM', sequelize.col('mark')), 'sum'],
-                [sequelize.fn('COUNT', sequelize.col('mark')), 'quantity']
+                [sequelize.cast(sequelize.fn('AVG', sequelize.col('mark')), 'DECIMAL(12, 2)'), 'avg']
             ],
             where: {
                 productId: productID
             },
             raw: true
         });
-        
-        if(marksSummary.quantity === 0) {
-            return { 'error': 'no marks on product' }
-        } else {
-            return { 'result': marksSummary.sum / marksSummary.quantity }
-        }
+        return marksSummary.avg;
     }
 }
 
