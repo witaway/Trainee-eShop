@@ -1,16 +1,38 @@
-const UserRepository = require('../repositories/user')
+const UserService = require('../services/user')
 
-class AuthController {
+class UserController {
   
-    static async list(req, res) {
-        const result = await UserRepository.list(req.body);
+    static async getWithList(req, res) {
+        const result = await UserService.getWithList();
         res.status(200).json(result);
     }
 
-    static async get(req, res) {
-        const result = await UserRepository.get(req.body);
+    static async create(req, res) {
+        const result = await UserService.create({
+
+        });
+        res.status(200).json(result);
+    }
+
+
+    static async getByID(req, res) {
+        const result = await UserService.getByID(req.params.id);
+        res.status(200).json(result);
+    }
+
+
+    static async updateByID(req, res) {
+        const result = await UserService.updateByID(req.params.id, {
+
+        });
+        res.status(200).json(result);
+    }
+
+
+    static async deleteByID(req, res) {
+        const result = await UserService.deleteByID(req.params.id);
         res.status(200).json(result);
     }
 }
 
-module.exports = AuthController
+module.exports = UserController

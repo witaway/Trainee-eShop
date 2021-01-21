@@ -3,43 +3,21 @@ const sequelize = require('../loaders/database')
 
 class UserRepository {
 
-    static async register(body) {
-        // body.username, body.email, body.password
-        const userByUsername = await User.findOne({
-            where: {
-                username: body.username
-            }
-        })
-        const userByEmail = await User.findOne({
-            where: {
-                email: body.email
-            }
-        })
-        if(userByEmail == null && userByUsername == null) {
-            return User.create({ 
-                username:  body.username,
-                email:     body.email,
-                password:  body.password
-            })
-        } else {
-            return {
-                'error': 'username or email is already taken :('
-            }
-        }
-    }
-
-    static async list(body) {
+    static async getListOfUsers(body) {
         // nothing
         return User.findAll()
     }
 
-    static async getUser(userId) {
-        // body.userId
-        return User.findOne({
-            where: {
-                id: userId
-            }
-        })
+    static async getUserByID(userId) {
+        return User.findOne({ where: { id: userId } })
+    }
+
+    static async getUserByEMail(email) {
+        return User.findOne({ where: { email: email } })
+    }
+
+    static async getUserByUsernamee(username) {
+        return User.findOne({ where: { username: username } })
     }
 
 }
