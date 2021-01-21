@@ -7,21 +7,9 @@ const RequestHandlingError = require('../helpers/error')
 
 class AuthService {
 
-    static async register(personalInfo) {
-
-        const userWithGivenEmail    = await UserRepository.getUserByEMail(personalInfo.email)
-        const userWithGivenUsername = await UserRepository.getUserByUsernamee(personalInfo.username)
-        
-        if(userWithGivenEmail)    throw new RequestHandlingError(403, "This email is already in use.")
-        if(userWithGivenUsername) throw new RequestHandlingError(403, "This username is already in use.")
-        
-        const newUserPersonalInfo = await AuthRepository.register(personalInfo)       
-        return newUserPersonalInfo
-    }
-
     static async loginWithEmailAndPassword(email, password) {
         
-        const userWithGivenEmail = await UserRepository.getUserByEMail(email)
+        const userWithGivenEmail = await UserRepository.getByEMail(email)
         if(!userWithGivenEmail) throw new RequestHandlingError(403, 'User with this email was not found.')
 
         const matchingResult = bcrypt.compareSync(
@@ -32,10 +20,6 @@ class AuthService {
         
         const token = await AuthRepository.loginById(userWithGivenEmail.id)       
         return token
-    }
-
-    static async logout(req, res) {
-        req, res
     }
 
 }

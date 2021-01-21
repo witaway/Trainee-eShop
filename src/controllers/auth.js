@@ -1,9 +1,10 @@
 const AuthService = require('../services/auth')
+const UserService = require('../services/user')
 
 class AuthController {
     
 	static async register(req, res) {
-        const userObject = await AuthService.register({
+        const userObject = await UserService.create({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,

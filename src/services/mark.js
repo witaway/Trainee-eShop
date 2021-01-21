@@ -9,7 +9,7 @@ class MarkService {
     static async getMark(userId, productID) {
         
         const product = await ProductRepository.getProduct(productID)
-        const user = await UserRepository.getUser(userId)
+        const user = await UserRepository.getByID(userId)
 
         if(!product) throw new RequestHandlingError(404, 'Product not found!')
         if(!user) throw new RequestHandlingError(404, 'User not found!')
@@ -21,7 +21,7 @@ class MarkService {
     static async setMark(userId, productID, value) {
 
         const product = await ProductRepository.getProduct(productID)
-        const user    = await UserRepository.getUser(userId)
+        const user    = await UserRepository.getByID(userId)
 
         if(!product) throw new RequestHandlingError(404, 'Product not found!')
         if(!user) throw new RequestHandlingError(404, 'User not found!')
