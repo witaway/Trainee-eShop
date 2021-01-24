@@ -1,11 +1,11 @@
 module.exports = function setup(server, passport) {
 
-    const setupDotEnv             = require('./loaders/dotenv')
-    const setupModels             = require('./loaders/models')
-    const setupExpressModules     = require('./loaders/expressModules')
-    const setupRoutes             = require('./loaders/routes')
-    const setupStartServer        = require('./loaders/startServer')
-    const setupPassportStrategies = require('./loaders/passport')
+    const setupDotEnv             = require('./dotenv')
+    const setupModels             = require('./models')
+    const setupExpressModules     = require('./expressModules')
+    const setupRoutes             = require('./routes')
+    const setupStartServer        = require('./startServer')
+    const setupPassportStrategies = require('./passport')
     
     // Loads .env to process.environment
     setupDotEnv()
