@@ -6,19 +6,10 @@ const MarkRouter = require('./marks')
 
 const passport = require("passport");
 const tryCatch = require('../helpers/tryCatch');
-const validator =  require('../helpers/validator')
+const validator =  require('../middlewares/validator')
 
-const ProductSchemas = require('../validationSchemas/products')
+const ProductSchemas = require('../schemas/products')
 
-// NOT REST
-//router.post('/create',   validator(ProductSchemas.create),      tryCatch(ProductController.create))
-//router.get('/get',       validator(ProductSchemas.getByID),     tryCatch(ProductController.getByID))
-//router.get('/list',      validator(ProductSchemas.getAll),      tryCatch(ProductController.getAll))
-//router.get('/list',      validator(ProductSchemas.getWithList), tryCatch(ProductController.getWithList))
-//router.put('/edit',      validator(ProductSchemas.edit),        tryCatch(ProductController.edit))
-//router.delete('/delete', validator(ProductSchemas.delete),      tryCatch(ProductController.delete))
-
-// REST
 
 router.use(passport.authenticate("jwt", { session: false }));
 
