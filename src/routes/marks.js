@@ -1,5 +1,7 @@
 const Router = require("express").Router;
-const router = Router();
+const router = Router({
+    mergeParams: true
+});
 
 const MarkController = require('../controllers/mark')
 
@@ -8,9 +10,9 @@ const validator =  require('../middlewares/validator')
 
 const MarksSchemas = require('../schemas/marks')
 
-router.get('/get',        validator(MarksSchemas.get),    tryCatch(MarkController.get));
-router.post('/set',       validator(MarksSchemas.set),    tryCatch(MarkController.set));
-router.delete('/delete',  validator(MarksSchemas.delete), tryCatch(MarkController.delete));
+router.get('/',        validator(MarksSchemas.get),    tryCatch(MarkController.get));
+router.post('/',       validator(MarksSchemas.set),    tryCatch(MarkController.set));
+router.delete('/',     validator(MarksSchemas.delete), tryCatch(MarkController.delete));
 
 //These will be deleted
 //router.get('/getAverage', validator(MarksSchemas.getAverage), tryCatch(MarkController.getAverage));

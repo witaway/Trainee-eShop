@@ -38,7 +38,7 @@ module.exports = {
         body: Joi.object({})
     }),
 
-    edit: Joi.object({
+    editByID: Joi.object({
         params: Joi.object({
             id: Joi.number().integer().required()
         }),
@@ -51,7 +51,7 @@ module.exports = {
         })
     }),
 
-    delete: Joi.object({
+    deleteByID: Joi.object({
         params: Joi.object({
             id: Joi.number().integer().required()
         }),
