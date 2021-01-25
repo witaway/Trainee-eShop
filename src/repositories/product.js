@@ -7,22 +7,28 @@ const { Op, Sequelize, DataTypes } = require("sequelize");
 class ProductRepository {
 
     static async createProduct(productObject) {
-        return Product.create({ 
+        const product = await Product.create({ 
             'name':        productObject.name,
             'description': productObject.description,
             'imageUrl':    productObject.imageUrl || null,
             'cost':        productObject.cost,
             'quantity':    productObject.quantity
         });
+        // We can't use attributes parameneter so I have to delete values manually from object
+        // It's bad solution, but it's only possible solution here
+        delete product.dataValues.createdAt
+        delete product.dataValues.deletedAt
+        return product
     }
 
     static async getProduct(id) {
-        return Product.findOne({
-            attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity'],
+        const product = Product.findOne({
+            attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity', 'updatedAt'],
             where: {
                 id: id,
             }
         });
+        return product
     }
 
     static async getListOfProducts(options) {
@@ -37,7 +43,7 @@ class ProductRepository {
         // }
         
         const settings = {
-            attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity', 
+            attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity', 'updatedAt',
             [sequelize.cast(sequelize.fn('AVG', sequelize.col('productsMarks.mark')), 'DECIMAL(12, 2)'), 'avg']], //cast for .00 precision
             // Zeros at the bottom
             order: [ [Sequelize.col('product.quantity'), Sequelize.literal(' = 0 ASC')] ],
@@ -84,24 +90,30 @@ class ProductRepository {
 
     static async getAllProducts() {
         return Product.findAll({
-            attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity']
+            attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity', 'updatedAt']
         });
     }
 
     static async editProduct(id, productObject) {
         const post = await Product.findByPk(id)
-        return post.update({
+        const updated = await post.update({
             'name':        productObject.name,
             'description': productObject.description,
             'imageUrl':    productObject.imageUrl || null,
             'cost':        productObject.cost,
             'quantity':    productObject.quantity
         });
+        delete updated.dataValues.createdAt
+        delete updated.dataValues.deletedAt
+        return updated
     }
 
     static async deleteProduct(id) {
         const post = await Product.findByPk(id);
-        return post.destroy();
+        const deleted = await post.destroy();
+        delete deleted.dataValues.createdAt
+        delete deleted.dataValues.deletedAt
+        return deleted
     }
 }
 
