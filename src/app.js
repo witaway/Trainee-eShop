@@ -1,7 +1,7 @@
 const express = require('express');
-const setup = require('./loaders');
+const init = require('./loaders');
 
 (async () => {
     const server = express();
-    await setup(server);
+    await init(server);
 })();
