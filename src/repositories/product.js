@@ -1,7 +1,7 @@
 const Product       = require('../models/products/product');
 const ProductsMarks = require('../models/products/productsMarks');
 
-const sequelize         = require('../loaders/database');
+const sequelize     = require('../sequelize').sequelize;
 const { Op, Sequelize } = require("sequelize");
 
 class ProductRepository {
