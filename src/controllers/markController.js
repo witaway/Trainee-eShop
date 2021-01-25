@@ -1,4 +1,4 @@
-const MarkService = require('../services/mark');
+const MarkService = require('../services/markService');
 
 class MarkController {
     

@@ -1,7 +1,7 @@
 const Router = require("express").Router;
 const router = Router();
 
-const AuthController = require('../controllers/auth');
+const AuthController = require('../controllers/authController')
 const tryCatch = require('../helpers/tryCatch');
 
 router.post('/register',  tryCatch(AuthController.register));

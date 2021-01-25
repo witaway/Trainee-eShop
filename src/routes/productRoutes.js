@@ -1,14 +1,14 @@
 const Router = require("express").Router;
 const router = Router();
 
-const ProductController = require('../controllers/product');
-const MarkRouter = require('./marks');
+const ProductController = require('../controllers/productController');
+const MarkRouter = require('./markRoutes');
 
 const passport = require("passport");
 const tryCatch  = require('../helpers/tryCatch');
 const validator =  require('../middlewares/validator');
 
-const ProductSchemas = require('../schemas/products');
+const ProductSchemas = require('../schemas/productSchemas');
 
 router.use(passport.authenticate("jwt", { session: false }));
 

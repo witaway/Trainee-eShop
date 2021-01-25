@@ -3,11 +3,11 @@ const router = Router({
     mergeParams: true
 });
 
-const MarkController = require('../controllers/mark');
+const MarkController = require('../controllers/markController');
 
 const tryCatch     = require('../helpers/tryCatch');
 const validator    =  require('../middlewares/validator');
-const MarksSchemas = require('../schemas/marks');
+const MarksSchemas = require('../schemas/markShemas');
 
 router.get('/',        validator(MarksSchemas.get),    tryCatch(MarkController.get));
 router.post('/',       validator(MarksSchemas.set),    tryCatch(MarkController.set));

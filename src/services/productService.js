@@ -1,4 +1,4 @@
-const ProductRepository     = require('../repositories/product');
+const ProductRepository     = require('../repositories/productRepository');
 const { NotFoundException } = require('../classes/errors/4xx');
 
 class ProductService {
