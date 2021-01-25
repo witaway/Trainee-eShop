@@ -10,11 +10,7 @@ module.exports = function(schema) {
             req.body = result.value
             next()
         } else {
-            console.log('ITS IN VALIDATOR HELPER')
-            console.log(result.error.details)
-            res.status(400).json({
-                message: result.error.details[0].message
-            });
+            res.error(400, "Request format error", result.error.details[0].message)
         }
     }
 }
