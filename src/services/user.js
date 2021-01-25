@@ -1,5 +1,5 @@
 const UserRepository = require('../repositories/user')
-const { Conflict, NotFound } = require('../classes/errors')
+const { ConflictException, NotFoundException } = require('../classes/errors/4xx')
 
 class UserService {
 
@@ -8,8 +8,8 @@ class UserService {
         const userWithGivenEmail    = await UserRepository.getByEMail(personalInfo.email)
         const userWithGivenUsername = await UserRepository.getByUsernamee(personalInfo.username)
         
-        if(userWithGivenEmail)    throw new Conflict("This email is already in use")
-        if(userWithGivenUsername) throw new Conflict("This username is already in use")
+        if(userWithGivenEmail)    throw new ConflictException("This email is already in use")
+        if(userWithGivenUsername) throw new ConflictException("This username is already in use")
         
         const newUserPersonalInfo = await UserRepository.create(personalInfo)       
         return newUserPersonalInfo
@@ -22,7 +22,7 @@ class UserService {
 
     static async getByID(userID) {
         const user = await UserRepository.getByID(userID)
-        if(!user) throw new NotFound('User is not found')
+        if(!user) throw new NotFoundException('User is not found')
         return user
     }
 
