@@ -1,8 +1,4 @@
-const User = require('../models/users/user')
-
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-
+const jwt     = require("jsonwebtoken");
 const process = require('process');
 
 class AuthRepository {
@@ -20,4 +16,4 @@ class AuthRepository {
 
 }
 
-module.exports = AuthRepository
+module.exports = AuthRepository;

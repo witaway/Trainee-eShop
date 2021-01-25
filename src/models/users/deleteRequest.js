@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const DeleteRequest = sequelize.define('deleteRequest', {
     'id': {
@@ -16,11 +16,11 @@ const DeleteRequest = sequelize.define('deleteRequest', {
     timestamps: true,
     createdAt: true,
     updatedAt: false
-})
+});
 
 //
 DeleteRequest.associate = (models) => {
-    DeleteRequest.hasOne(models.User)
-}
+    DeleteRequest.hasOne(models.User);
+};
 
-module.exports = DeleteRequest
+module.exports = DeleteRequest;

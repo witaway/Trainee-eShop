@@ -1,20 +1,20 @@
-const MarkService = require('../services/mark')
+const MarkService = require('../services/mark');
 
 class MarkController {
     
 	static async get(req, res) {
         const result = await MarkService.getMark(req.user, req.params.id); 
-        res.success(200, 'Mark is got successfully', result)
+        res.success(200, 'Mark is got successfully', result);
     }
 
 	static async set(req, res) {
         const result = await MarkService.setMark(req.user, req.params.id, req.body.value);
-        res.success(200, 'Mark is set successfully', result)
+        res.success(200, 'Mark is set successfully', result);
 	}
 
 	static async delete(req, res) {
         const result = await MarkService.deleteProduct(req.user, req.params.id);
-        res.success(200, 'Mark is deleted successfully', result)
+        res.success(200, 'Mark is deleted successfully', result);
 	}
 
     //There's no universal formatting because it's debugging method
@@ -30,4 +30,4 @@ class MarkController {
     }
 }
 
-module.exports = MarkController
+module.exports = MarkController;

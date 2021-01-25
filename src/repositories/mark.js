@@ -1,8 +1,5 @@
-const Product       = require('../models/products/product')
-const User          = require('../models/users/user')
-const ProductsMarks = require('../models/products/productsMarks')
-const sequelize = require('../loaders/database')
-const { Sequelize } = require('sequelize')
+const ProductsMarks = require('../models/products/productsMarks');
+const sequelize     = require('../loaders/database');
 
 class MarkRepository {
 
@@ -12,17 +9,17 @@ class MarkRepository {
                 userId:    userId,
                 productId: productID
             }
-        })
+        });
         if(mark == null) {
             return ProductsMarks.create({ 
                 userId:     userId,
                 productId:  productID,
                 mark:       value
-            })
+            });
         } else {
             return mark.update({
                 mark: value    
-            })
+            });
         }
     }
 
@@ -33,8 +30,8 @@ class MarkRepository {
                 userId:    userId,
                 productId: productID
             }
-        })
-        return mark
+        });
+        return mark;
     }
 
     static async deleteMark(userId, productID) {
@@ -43,7 +40,7 @@ class MarkRepository {
                 userId:    userId,
                 productId: productID
             }
-        })
+        });
         return mark.destroy();
     }
 
@@ -72,4 +69,4 @@ class MarkRepository {
     }
 }
 
-module.exports = MarkRepository
+module.exports = MarkRepository;

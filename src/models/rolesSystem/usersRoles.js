@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const UsersRoles = sequelize.define('usersRoles', {
     'id': {
@@ -14,8 +14,8 @@ const UsersRoles = sequelize.define('usersRoles', {
 })
 
 UsersRoles.associate = (models) => {
-    models.Role.belongsToMany(models.User, { through: models.UsersRoles })
-    models.User.belongsToMany(models.Role, { through: models.UsersRoles })
-}
+    models.Role.belongsToMany(models.User, { through: models.UsersRoles });
+    models.User.belongsToMany(models.Role, { through: models.UsersRoles });
+};
 
-module.exports = UsersRoles
+module.exports = UsersRoles;

@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const Favourites = sequelize.define('favourites', {
     'id': {
@@ -11,11 +11,11 @@ const Favourites = sequelize.define('favourites', {
 }, {
     tableName: 'favourites',
     timestamps: false,
-})
+});
 
 Favourites.associate = (models) => {
-    models.Product.belongsToMany(models.User, { through: models.Favourites })
-    models.User.belongsToMany(models.Product, { through: models.Favourites })
+    models.Product.belongsToMany(models.User, { through: models.Favourites });
+    models.User.belongsToMany(models.Product, { through: models.Favourites });
 }
 
-module.exports = Favourites
+module.exports = Favourites;

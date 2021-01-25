@@ -1,68 +1,77 @@
-const MarkRepository = require('../repositories/mark')
-const ProductRepository = require('../repositories/product')
-const UserRepository = require('../repositories/user')
+const MarkRepository    = require('../repositories/mark');
+const ProductRepository = require('../repositories/product');
+const UserRepository    = require('../repositories/user');
 
-const { NotFoundException } = require('../classes/errors/4xx')
+const { NotFoundException } = require('../classes/errors/4xx');
 
 class MarkService {
 
     static async getMark(userId, productID) {
-        
-        const product = await ProductRepository.getProduct(productID)
-        const user    = await UserRepository.getByID(userId)
 
-        if(!product) throw new NotFoundException('Product is not found')
-        if(!user)    throw new NotFoundException('User is not found')
+        const product = await ProductRepository.getProduct(productID);
+        const user    = await UserRepository.getByID(userId);
 
-        const mark = MarkRepository.getMark(userId, productID)
-        return mark
+        if(!product) {
+            throw new NotFoundException('Product is not found');
+        }
+        if(!user) {
+            throw new NotFoundException('User is not found');
+        }
+
+        const mark = MarkRepository.getMark(userId, productID);
+        return mark;
     }
 
     static async setMark(userId, productID, value) {
 
-        const product = await ProductRepository.getProduct(productID)
-        const user    = await UserRepository.getByID(userId)
+        const product = await ProductRepository.getProduct(productID);
+        const user    = await UserRepository.getByID(userId);
 
-        if(!product) throw new NotFoundException('Product is not found')
-        if(!user)    throw new NotFoundException('User is not found')
+        if(!product) {
+            throw new NotFoundException('Product is not found');
+        }
+        if(!user) {
+            throw new NotFoundException('User is not found');
+        }
 
-        const mark = await MarkRepository.setMark(userId, productID, value)
-        return mark
+        const mark = await MarkRepository.setMark(userId, productID, value);
+        return mark;
     }
 
     static async deleteMark(userId, productID) {
-
         const mark = await MarkRepository.findOne({
             where: {
                 userId:    userId,
                 productId: productID
             }
-        })
+        });
 
-        if(!mark) throw new NotFoundException('Mark is not found')
+        if(!mark) {
+            throw new NotFoundException('Mark is not found');
+        }
 
-        const deletedMark = await MarkRepository.deleteMark(userId, productID)
-        return deletedMark
+        const deletedMark = await MarkRepository.deleteMark(userId, productID);
+        return deletedMark;
     }
 
     static async getAllProductMarks(productID) {
-        
-        const product = await ProductRepository.getProduct(productID)
-        if(!product) throw new NotFoundException('Product is not found')
-
-        const marks = await MarkRepository.getAllProductMarks(productID)
-        return marks
+        const product = await ProductRepository.getProduct(productID);
+        if(!product) {
+            throw new NotFoundException('Product is not found');
+        }
+        const marks = await MarkRepository.getAllProductMarks(productID);
+        return marks;
     }
 
     static async getProductMarksAverage(productID) {
-
-        const product = await ProductRepository.getProduct(productID)
-        if(!product) throw new NotFoundException('Product is not found')
-
-        const average = await MarkRepository.getProductMarksAverage(productID)
-        return average
+        const product = await ProductRepository.getProduct(productID);
+        if(!product) {
+            throw new NotFoundException('Product is not found');
+        }
+        const average = await MarkRepository.getProductMarksAverage(productID);
+        return average;
     }
 
 }
 
-module.exports = MarkService
+module.exports = MarkService;

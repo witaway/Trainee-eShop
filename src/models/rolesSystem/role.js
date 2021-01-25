@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const Role = sequelize.define('role', {
     'id': {
@@ -18,10 +18,10 @@ const Role = sequelize.define('role', {
         {uniqie: true, fields: ['name']},
     ],
     timestamps: false
-})
+});
 
 Role.associate = (models) => {
     models;
-}
+};
 
-module.exports = Role
+module.exports = Role;

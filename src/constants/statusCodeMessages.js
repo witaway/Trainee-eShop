@@ -8,4 +8,4 @@ module.exports = {
     '449': 'Did not enough information',
     '500': 'Internal server error',
     '501': 'The server does not support capabilities required to process the request'
-}
+};

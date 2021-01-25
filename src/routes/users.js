@@ -1,7 +1,7 @@
 const Router = require("express").Router;
 const router = Router();
 
-const UserController = require('../controllers/user')
+const UserController = require('../controllers/user');
 
 const tryCatch = require('../helpers/tryCatch');
 

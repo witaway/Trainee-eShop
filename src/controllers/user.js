@@ -1,4 +1,4 @@
-const UserService = require('../services/user')
+const UserService = require('../services/user');
 
 class UserController {
   
@@ -8,17 +8,17 @@ class UserController {
             email: req.body.email,
             password: req.body.password
         });
-        res.success(200, 'User is created successfully', result)
+        res.success(200, 'User is created successfully', result);
     }
 
     static async getWithList(req, res) {
         const result = await UserService.getWithList();
-        res.success(200, 'Users are got successfully', result)
+        res.success(200, 'Users are got successfully', result);
     }
 
     static async getByID(req, res) {
         const result = await UserService.getByID(req.params.id);
-        res.success(200, 'User is got successfully', result)
+        res.success(200, 'User is got successfully', result);
     }
 
 
@@ -28,14 +28,14 @@ class UserController {
             email: req.body.email,
             password: req.body.password
         });
-        res.success(200, 'User is updated successfully', result)
+        res.success(200, 'User is updated successfully', result);
     }
 
 
     static async deleteByID(req, res) {
         const result = await UserService.deleteByID(req.params.id);
-        res.success(200, 'User is deleted successfully', result)
+        res.success(200, 'User is deleted successfully', result);
     }
 }
 
-module.exports = UserController
+module.exports = UserController;

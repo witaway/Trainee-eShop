@@ -1,6 +1,4 @@
-const { func } = require("joi");
-
-module.exports = function(req, res, next) {
+const responseFormatter = (req, res, next) => {
     
     res.success = (statusCode, message, object) => {
         res.status(statusCode).json({
@@ -8,7 +6,7 @@ module.exports = function(req, res, next) {
             message: message,
             status: 'success',
             statusCode: statusCode,
-        })
+        });
     }
 
     res.error = (statusCode, message, object) => {
@@ -17,8 +15,10 @@ module.exports = function(req, res, next) {
             message: message,
             status: 'failed',
             statusCode: statusCode,
-        })
-    }
+        });
+    };
     
-    next()
-}
+    next();
+};
+
+module.exports = responseFormatter;

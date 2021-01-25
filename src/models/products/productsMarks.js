@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const ProductsMarks = sequelize.define('productsMarks', {
     'id': {
@@ -18,7 +18,7 @@ const ProductsMarks = sequelize.define('productsMarks', {
 }, {
     tableName: 'products_marks',
     timestamps: false,
-})
+});
 
 ProductsMarks.associate = (models) => {
     models.Product.hasMany(models.ProductsMarks);
@@ -27,6 +27,6 @@ ProductsMarks.associate = (models) => {
     //models.ProductsMarks.belongsTo(models.Product)
     //models.Product.belongsToMany(models.User, { through: models.ProductsMarks })
     //models.User.belongsToMany(models.Product, { through: models.ProductsMarks })
-}
+};
 
-module.exports = ProductsMarks
+module.exports = ProductsMarks;

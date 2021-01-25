@@ -1,6 +1,4 @@
-const User          = require('../models/users/user')
-const sequelize = require('../loaders/database')
-
+const User   = require('../models/users/user');
 const bcrypt = require("bcryptjs");
 
 class UserRepository {
@@ -20,13 +18,13 @@ class UserRepository {
     }
 
     static async getWithList() {
-        const users = User.findAll()
-        return users
+        const users = User.findAll();
+        return users;
     }
 
     static async updateByID(userID, personalInfo) {
 
-        const user = await User.findByPk(userID)
+        const user = await User.findByPk(userID);
         const salt = bcrypt.genSaltSync(3);
         const password = personalInfo.password;
 
@@ -36,27 +34,27 @@ class UserRepository {
             password: bcrypt.hashSync(password, salt)
         })
 
-        return newUserInfo
+        return newUserInfo;
     }
 
     static async deleteByID(userID) {
         
         const user = await User.findByPk(userID);
-        return user.destroy()
+        return user.destroy();
     }
 
     static async getByID(userId) {
-        return User.findOne({ where: { id: userId } })
+        return User.findOne({ where: { id: userId } });
     }
 
     static async getByEMail(email) {
-        return User.findOne({ where: { email: email } })
+        return User.findOne({ where: { email: email } });
     }
 
     static async getByUsernamee(username) {
-        return User.findOne({ where: { username: username } })
+        return User.findOne({ where: { username: username } });
     }
 
 }
 
-module.exports = UserRepository
+module.exports = UserRepository;

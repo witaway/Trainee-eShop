@@ -1,3 +1,5 @@
-module.exports = function() {
-    require('dotenv').config()
-}
+const setupDotEnv = () => {
+    require('dotenv').config();
+};
+
+module.exports = setupDotEnv;

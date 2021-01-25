@@ -1,4 +1,4 @@
-const { getReasonPhrase } = require('http-status-codes')
+const { getReasonPhrase } = require('http-status-codes');
 
 function BadRequestException(message) {
     this.name    = getReasonPhrase(400);
@@ -7,7 +7,7 @@ function BadRequestException(message) {
     this.status  = 400;
   }
 
-  BadRequestException.prototype = Object.create(Error.prototype);
-  BadRequestException.prototype.constructor = BadRequestException;
+BadRequestException.prototype = Object.create(Error.prototype);
+BadRequestException.prototype.constructor = BadRequestException;
 
-  module.exports = BadRequestException
+module.exports = BadRequestException;

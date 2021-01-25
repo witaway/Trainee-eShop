@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const RoutesAccess = sequelize.define('routesAccess', {
     'id': {
@@ -14,8 +14,8 @@ const RoutesAccess = sequelize.define('routesAccess', {
 })
 
 RoutesAccess.associate = (models) => {
-    models.Role.belongsToMany(models.Route, { through: models.RoutesAccess })
-    models.Route.belongsToMany(models.Role, { through: models.RoutesAccess })
+    models.Role.belongsToMany(models.Route, { through: models.RoutesAccess });
+    models.Route.belongsToMany(models.Role, { through: models.RoutesAccess });
 }
 
 module.exports = RoutesAccess

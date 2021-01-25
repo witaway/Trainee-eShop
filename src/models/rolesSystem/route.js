@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const Route = sequelize.define('route', {
     'id': {
@@ -18,10 +18,10 @@ const Route = sequelize.define('route', {
         {uniqie: true, fields: ['path']},
     ],
     timestamps: false
-})
+});
 
 Route.associate = (models) => {
     models;
 }
 
-module.exports = Route
+module.exports = Route;

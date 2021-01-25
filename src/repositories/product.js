@@ -1,8 +1,8 @@
-const Product = require('../models/products/product')
-const ProductsMarks = require('../models/products/productsMarks')
+const Product       = require('../models/products/product');
+const ProductsMarks = require('../models/products/productsMarks');
 
-const sequelize = require('../loaders/database')
-const { Op, Sequelize, DataTypes } = require("sequelize");
+const sequelize         = require('../loaders/database');
+const { Op, Sequelize } = require("sequelize");
 
 class ProductRepository {
 
@@ -16,9 +16,9 @@ class ProductRepository {
         });
         // We can't use attributes parameneter so I have to delete values manually from object
         // It's bad solution, but it's only possible solution here
-        delete product.dataValues.createdAt
-        delete product.dataValues.deletedAt
-        return product
+        delete product.dataValues.createdAt;
+        delete product.dataValues.deletedAt;
+        return product;
     }
 
     static async getProduct(id) {
@@ -28,7 +28,7 @@ class ProductRepository {
                 id: id,
             }
         });
-        return product
+        return product;
     }
 
     static async getListOfProducts(options) {
@@ -62,27 +62,29 @@ class ProductRepository {
             // Without it LIMIT places incorrectly in subquery, but i need this just in the end.
             subQuery: false,
             raw: true
-        }
+        };
         
         if(options.onlyWithPictures === true) {
             settings.where = {
                 imageUrl: {
                     [Op.not]: null
                 }
-            }
+            };
         }
 
         if(options.sortBy && options.order && options.sortBy !== 'none') {
-            if(options.sortBy === 'date_of_update') options.sortBy = 'updatedAt'
-            settings.order.push([options.sortBy, options.order])
+            if(options.sortBy === 'date_of_update') {
+                options.sortBy = 'updatedAt';
+            }
+            settings.order.push([options.sortBy, options.order]);
         }
 
         if(options.count || options.count === 0) {
-            settings.limit = options.count
+            settings.limit = options.count;
         }
 
         if(options.offset || options.offset === 0) {
-            settings.offset = options.offset
+            settings.offset = options.offset;
         }
 
         return Product.findAll(settings);
@@ -95,7 +97,7 @@ class ProductRepository {
     }
 
     static async editProduct(id, productObject) {
-        const post = await Product.findByPk(id)
+        const post = await Product.findByPk(id);
         const updated = await post.update({
             'name':        productObject.name,
             'description': productObject.description,
@@ -103,18 +105,18 @@ class ProductRepository {
             'cost':        productObject.cost,
             'quantity':    productObject.quantity
         });
-        delete updated.dataValues.createdAt
-        delete updated.dataValues.deletedAt
-        return updated
+        delete updated.dataValues.createdAt;
+        delete updated.dataValues.deletedAt;
+        return updated;
     }
 
     static async deleteProduct(id) {
         const post = await Product.findByPk(id);
         const deleted = await post.destroy();
-        delete deleted.dataValues.createdAt
-        delete deleted.dataValues.deletedAt
-        return deleted
+        delete deleted.dataValues.createdAt;
+        delete deleted.dataValues.deletedAt;
+        return deleted;
     }
 }
 
-module.exports = ProductRepository
+module.exports = ProductRepository;

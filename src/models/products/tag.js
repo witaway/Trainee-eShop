@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const Tag = sequelize.define('tag', {
     'id': {
@@ -17,10 +17,10 @@ const Tag = sequelize.define('tag', {
     timestamps: true,
     createdAt: true,
 	updatedAt: false,
-})
+});
 
 Tag.associate = (models) => {
     models;
-}
+};
 
-module.exports = Tag
+module.exports = Tag;

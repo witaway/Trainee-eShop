@@ -1,4 +1,4 @@
-const { getReasonPhrase } = require('http-status-codes')
+const { getReasonPhrase } = require('http-status-codes');
 
 function NotImplementedException(message) {
     this.name    = getReasonPhrase(501);
@@ -7,7 +7,7 @@ function NotImplementedException(message) {
     this.status  = 501;
   }
 
-  NotImplementedException.prototype = Object.create(Error.prototype);
-  NotImplementedException.prototype.constructor = NotImplementedException;
+NotImplementedException.prototype = Object.create(Error.prototype);
+NotImplementedException.prototype.constructor = NotImplementedException;
 
-  module.exports = NotImplementedException
+module.exports = NotImplementedException;

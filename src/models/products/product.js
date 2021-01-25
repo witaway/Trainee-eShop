@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database')
 
 const Product = sequelize.define('product', {
     'id': {
@@ -36,10 +36,10 @@ const Product = sequelize.define('product', {
     createdAt: true,
 	updatedAt: true,
 	deletedAt: true
-})
+});
 
 Product.associate = (models) => {
     models;
-}
+};
 
-module.exports = Product
+module.exports = Product;

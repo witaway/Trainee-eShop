@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../loaders/database')
+const sequelize     = require('../../loaders/database');
 
 const User = sequelize.define('user', {
     'id': {
@@ -42,10 +42,10 @@ const User = sequelize.define('user', {
     createdAt: true,
 	updatedAt: false,
 	deletedAt: true
-})
+});
 
 User.associate = (models) => {
     models;
-}
+};
 
-module.exports = User
+module.exports = User;

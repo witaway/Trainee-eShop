@@ -1,4 +1,4 @@
-const ProductService = require('../services/product')
+const ProductService = require('../services/product');
 
 class ProductController {
 
@@ -10,16 +10,15 @@ class ProductController {
             cost:        req.body.cost,
             quantity:    req.body.quantity
         });
-        res.success(200, 'Product is created successfully', result)
+        res.success(200, 'Product is created successfully', result);
     }
 
     static async getByID(req, res) {
         const result = await ProductService.getProduct(req.params.id);
-        res.success(200, 'Product is got successfully', result)
+        res.success(200, 'Product is got successfully', result);
     }
 
     static async getWithList(req, res) {
-        console.log(res.success)
         const result = await ProductService.getListOfProducts({
             sortBy:           req.body.sort_by,
             order:            req.body.order,
@@ -27,13 +26,13 @@ class ProductController {
             count:            req.body.count,
             offset:           req.body.offset
         });
-        res.success(200, 'Products are got successfully', result)
+        res.success(200, 'Products are got successfully', result);
     }
 
     //Debug method
     static async getAll(req, res) {
         const result = await ProductService.getAllProducts();
-        res.success(200, 'Products are got successfully', result)
+        res.success(200, 'Products are got successfully', result);
     }
 
     static async editByID(req, res) {
@@ -44,13 +43,13 @@ class ProductController {
             cost:        req.body.cost,
             quantity:    req.body.quantity
         });
-        res.success(200, 'Product is edited successfully', result)
+        res.success(200, 'Product is edited successfully', result);
     }
 
     static async deleteByID(req, res) {
         const result = await ProductService.deleteProduct(req.params.id);
-        res.success(200, 'Product is deleted successfully', result)
+        res.success(200, 'Product is deleted successfully', result);
     }
 }
 
-module.exports = ProductController
+module.exports = ProductController;
