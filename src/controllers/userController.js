@@ -1,5 +1,7 @@
 const UserService = require('../services/userService');
 
+const ResponseFormat = require('../helpers/responseFormat');
+
 class UserController {
   
     static async create(req, res) {
@@ -8,17 +10,23 @@ class UserController {
             email: req.body.email,
             password: req.body.password
         });
-        res.success(200, 'User is created successfully', result);
+        res.status(200).json(ResponseFormat.success(
+            200, 'User is created successfully', result
+        )); 
     }
 
     static async getList(req, res) {
         const result = await UserService.getList();
-        res.success(200, 'Users are got successfully', result);
+        res.status(200).json(ResponseFormat.success(
+            200, 'Users are got successfully', result
+        )); 
     }
 
     static async getByID(req, res) {
         const result = await UserService.getByID(req.params.id);
-        res.success(200, 'User is got successfully', result);
+        res.status(200).json(ResponseFormat.success(
+            200, 'Users is got successfully', result
+        )); 
     }
 
 
@@ -28,13 +36,17 @@ class UserController {
             email: req.body.email,
             password: req.body.password
         });
-        res.success(200, 'User is updated successfully', result);
+        res.status(200).json(ResponseFormat.success(
+            200, 'Users is updated successfully', result
+        )); 
     }
 
 
     static async deleteByID(req, res) {
         const result = await UserService.deleteByID(req.params.id);
-        res.success(200, 'User is deleted successfully', result);
+        res.status(200).json(ResponseFormat.success(
+            200, 'Users is deleted successfully', result
+        )); 
     }
 }
 

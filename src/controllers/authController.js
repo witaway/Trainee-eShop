@@ -1,6 +1,8 @@
 const AuthService = require('../services/authService')
 const UserService = require('../services/userService')
 
+const ResponseFormat = require('../helpers/responseFormat');
+
 class AuthController {
     
 	static async register(req, res) {
@@ -9,7 +11,9 @@ class AuthController {
             email: req.body.email,
             password: req.body.password,
         });
-        res.success(200, 'registered successfully', userObject);
+        res.status(200).json(ResponseFormat.success(
+            200, 'Registered successfully', userObject
+        ));
     }
 
     static async loginWithEmailAndPassword(req, res) {
@@ -25,13 +29,18 @@ class AuthController {
         res.cookie('jwt', token, {
             maxAge: 2 * hour
         });
-        res.success(200, 'Logged in successfully', { token });
+
+        res.status(200).json(ResponseFormat.success(
+            200, 'Logged in successfully', { token }
+        ));
     }
 
     static async logout(req, res) {
         req.logout();
         res.clearCookie('jwt');
-        res.success(200, 'Logged out successfully', {});
+        res.status(200).json(ResponseFormat.success(
+            200, 'Logged out successfully', {}
+        ));
     }
     
 }

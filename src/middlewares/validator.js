@@ -1,3 +1,5 @@
+const ResponseFormat = require('../helpers/responseFormat');
+
 const validator = (schema) => {
     return function(req, res, next) {
         const result = schema.validate({
@@ -9,7 +11,11 @@ const validator = (schema) => {
             req.params = result.value.params;
             next();
         } else {
-            res.error(400, "Request format error", result.error.details[0].message);
+            //throw BadRequestException(Request format error)
+            res.status(400).json(ResponseFormat.error(
+                400, "Request format error", 
+                result.error.details[0].message
+            ));
         }
     }
 }
