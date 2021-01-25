@@ -4,9 +4,9 @@ const router = Router();
 const MarkController = require('../controllers/mark')
 
 const tryCatch = require('../helpers/tryCatch');
-const validator =  require('../helpers/validator')
+const validator =  require('../middlewares/validator')
 
-const MarksSchemas = require('../validationSchemas/marks')
+const MarksSchemas = require('../schemas/marks')
 
 router.get('/get',        validator(MarksSchemas.get),    tryCatch(MarkController.get));
 router.post('/set',       validator(MarksSchemas.set),    tryCatch(MarkController.set));
