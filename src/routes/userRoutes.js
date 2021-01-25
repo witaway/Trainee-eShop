@@ -3,13 +3,10 @@ const router = Router();
 
 const UserController = require('../controllers/userController');
 
-const tryCatch = require('../helpers/tryCatch');
-
-router.get('/',        tryCatch(UserController.getList));
-router.post('/',       tryCatch(UserController.create));
-
-router.get('/:id',     tryCatch(UserController.getByID));
-router.put('/:id',     tryCatch(UserController.updateByID));
-router.delete('/:id',  tryCatch(UserController.deleteByID));
+router.get('/',        UserController.getList);
+router.post('/',       UserController.create);
+router.get('/:id',     UserController.getByID);
+router.put('/:id',     UserController.updateByID);
+router.delete('/:id',  UserController.deleteByID);
 
 module.exports = router
