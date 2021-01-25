@@ -7,7 +7,8 @@ module.exports = function(schema) {
             params: req.params
         })
         if(!result.error) {
-            req.body = result.value
+            req.body = result.value.body
+            req.params = result.value.params
             next()
         } else {
             res.error(400, "Request format error", result.error.details[0].message)
