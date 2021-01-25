@@ -1,5 +1,5 @@
 const UserRepository = require('../repositories/user')
-const RequestHandlingError = require('../helpers/error')
+const { Conflict, NotFound } = require('../classes/errors')
 
 class UserService {
 
@@ -8,8 +8,8 @@ class UserService {
         const userWithGivenEmail    = await UserRepository.getByEMail(personalInfo.email)
         const userWithGivenUsername = await UserRepository.getByUsernamee(personalInfo.username)
         
-        if(userWithGivenEmail)    throw new RequestHandlingError(403, "This email is already in use.")
-        if(userWithGivenUsername) throw new RequestHandlingError(403, "This username is already in use.")
+        if(userWithGivenEmail)    throw new Conflict("This email is already in use")
+        if(userWithGivenUsername) throw new Conflict("This username is already in use")
         
         const newUserPersonalInfo = await UserRepository.create(personalInfo)       
         return newUserPersonalInfo
@@ -22,13 +22,13 @@ class UserService {
 
     static async getByID(userID) {
         const user = await UserRepository.getByID(userID)
-        if(!user) throw new RequestHandlingError(404, 'User not found!')
+        if(!user) throw new NotFound('User is not found')
         return user
     }
 
     static async updateByID(userID, personalInfo) {
         this.getByID(userID)
-        const user = await UserRepository.updayeByID(userID, personalInfo)
+        const user = await UserRepository.updateByID(userID, personalInfo)
         return user
     }
 
