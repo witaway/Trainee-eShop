@@ -5,7 +5,7 @@ const UserController = require('../controllers/user');
 
 const tryCatch = require('../helpers/tryCatch');
 
-router.get('/',        tryCatch(UserController.getWithList));
+router.get('/',        tryCatch(UserController.getList));
 router.post('/',       tryCatch(UserController.create));
 
 router.get('/:id',     tryCatch(UserController.getByID));

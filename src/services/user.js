@@ -19,8 +19,8 @@ class UserService {
         return newUserPersonalInfo;
     }
 
-    static async getWithList() {
-        const users = await UserRepository.getWithList();
+    static async getList() {
+        const users = await UserRepository.getList();
         return users;
     }
 

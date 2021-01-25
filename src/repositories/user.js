@@ -17,7 +17,7 @@ class UserRepository {
         return user;
     }
 
-    static async getWithList() {
+    static async getList() {
         const users = User.findAll();
         return users;
     }

@@ -11,8 +11,8 @@ class UserController {
         res.success(200, 'User is created successfully', result);
     }
 
-    static async getWithList(req, res) {
-        const result = await UserService.getWithList();
+    static async getList(req, res) {
+        const result = await UserService.getList();
         res.success(200, 'Users are got successfully', result);
     }
 

@@ -18,7 +18,7 @@ class ProductController {
         res.success(200, 'Product is got successfully', result);
     }
 
-    static async getWithList(req, res) {
+    static async getList(req, res) {
         const result = await ProductService.getListOfProducts({
             sortBy:           req.body.sort_by,
             order:            req.body.order,

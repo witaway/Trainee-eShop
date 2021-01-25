@@ -4,7 +4,7 @@ const router = Router();
 const ProductController = require('../controllers/product');
 const MarkRouter = require('./marks');
 
-const passport  = require("passport");
+const passport = require("passport");
 const tryCatch  = require('../helpers/tryCatch');
 const validator =  require('../middlewares/validator');
 
@@ -14,7 +14,7 @@ router.use(passport.authenticate("jwt", { session: false }));
 
 router.use('/:id/mark/', MarkRouter);
 
-router.get('/',          validator(ProductSchemas.getWithList),   tryCatch(ProductController.getWithList));
+router.get('/',          validator(ProductSchemas.getWithList),   tryCatch(ProductController.getList));
 router.get('/:id',       validator(ProductSchemas.getByID),       tryCatch(ProductController.getByID));
 router.delete('/:id',    validator(ProductSchemas.deleteByID),    tryCatch(ProductController.deleteByID));
 router.post('/',         validator(ProductSchemas.create),        tryCatch(ProductController.create));
