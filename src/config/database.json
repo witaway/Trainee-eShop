@@ -1,0 +1,8 @@
+{
+    "database": "onlineshop",
+    "username": "root",
+    "password": "password",
+    "host":     "localhost",
+    "dialect":  "mysql",
+    "logging":  true
+}

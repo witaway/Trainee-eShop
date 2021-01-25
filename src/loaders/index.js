@@ -1,32 +1,27 @@
-const setupDotEnv             = require('./dotenv');
-const setupModels             = require('./models');
-const setupExpressModules     = require('./expressModules');
-const setupRoutes             = require('./routes');
-const setupStartServer        = require('./startServer');
-const setupPassportStrategies = require('./passport');
+const initDotEnv         = require('./dotenvLoader');
+const initExpressModules = require('./expressModulesLoader');
+const initRoutes         = require('./routesLoader');
+const initStartServer    = require('./startServerLoader');
+const connect            = require('../sequelize').connect
 
-const superLoader = (server, passport) => {
+const superLoader = async (server) => {
 
     // Loads .env to process.environment
-    setupDotEnv();
-    
+    initDotEnv();
+
     // Makes all database stuff, loads models and associations between them
-    // Also only after setupModels() you can export anything from /models 
-    //               with confidence that everything will be fine
-    setupModels();
-    
-    //Loads all passport strategies
-    setupPassportStrategies(passport);
+    // Also only after connect() you can export anything from /models 
+    // with confidence that everything will be fine
+    await connect();
     
     // Loads all server modules like logging, cookie parser and so on
-    // TO DO
-    setupExpressModules(server, passport);
+    initExpressModules(server);
     
     // Loads routes
-    setupRoutes(server);
+    initRoutes(server);
     
     // Start server 
-    setupStartServer(server);
+    initStartServer(server);
 
 }
 

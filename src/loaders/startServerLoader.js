@@ -1,4 +1,4 @@
-const setupStartServer = (server) => {
+const initStartServer = (server) => {
     
   console.log('SETUP - Starting server..');
 
@@ -12,4 +12,4 @@ const setupStartServer = (server) => {
   });
 };
 
-module.exports = setupStartServer;
+module.exports = initStartServer;
