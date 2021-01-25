@@ -8,9 +8,9 @@ module.exports = function tryCatch(func) {
         const p = func(req, res) // func is async!
         p.catch((error) => {            
             //If it's expected exception with defined http code
-            if(Object.keys(ReasonPhrases).includes(error.name)) {
+            if(Object.values(ReasonPhrases).includes(error.name)) {
                 // From my messages collection OR from standart reason messages list
-                const message = statusCodeMessages[error.status] || ReasonPhrases[StatusCodes[error.status]]
+                const message = error.message || statusCodeMessages[error.status] || ReasonPhrases[StatusCodes[error.status]]
                 res.error(error.status, message, {
                     name: error.name
                 })
