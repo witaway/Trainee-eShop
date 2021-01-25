@@ -8,17 +8,17 @@ class UserController {
             email: req.body.email,
             password: req.body.password
         });
-        res.status(200).json(result);
+        res.success(200, 'User is created successfully', result)
     }
 
     static async getWithList(req, res) {
         const result = await UserService.getWithList();
-        res.status(200).json(result);
+        req.success(200, 'Users are got successfully', result)
     }
 
     static async getByID(req, res) {
         const result = await UserService.getByID(req.params.id);
-        res.status(200).json(result);
+        req.success(200, 'User is got successfully', result)
     }
 
 
@@ -28,13 +28,13 @@ class UserController {
             email: req.body.email,
             password: req.body.password
         });
-        res.status(200).json(result);
+        res.success(200, 'User is updated successfully', result)
     }
 
 
     static async deleteByID(req, res) {
         const result = await UserService.deleteByID(req.params.id);
-        res.status(200).json(result);
+        res.success(200, 'User is deleted successfully', result)
     }
 }
 

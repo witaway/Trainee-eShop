@@ -9,7 +9,7 @@ class AuthController {
             email: req.body.email,
             password: req.body.password,
         });
-        res.status(200).json(userObject);
+        res.success(200, 'registered successfully', userObject)
     }
 
     static async loginWithEmailAndPassword(req, res) {
@@ -20,15 +20,13 @@ class AuthController {
         res.cookie('jwt', token, {
             maxAge: 3600*24
         })
-        res.status(200).json(token)
+        res.success(200, 'Logged in successfully', { token })
     }
 
     static async logout(req, res) {
         req.logout()
         res.clearCookie('jwt')
-        res.status(200).json({
-            message: 'Logged out successfully!'
-        })
+        res.success(200, 'Logged out successfully', {})
     }
     
 }
