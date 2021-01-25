@@ -17,8 +17,13 @@ class AuthController {
             req.body.email,
             req.body.password
         )
+
+        const sec  = 1000
+        const min  = 60 * sec
+        const hour = 60 * min
+
         res.cookie('jwt', token, {
-            maxAge: 3600*24
+            maxAge: 2 * hour
         })
         res.success(200, 'Logged in successfully', { token })
     }
