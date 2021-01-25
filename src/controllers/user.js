@@ -13,12 +13,12 @@ class UserController {
 
     static async getWithList(req, res) {
         const result = await UserService.getWithList();
-        req.success(200, 'Users are got successfully', result)
+        res.success(200, 'Users are got successfully', result)
     }
 
     static async getByID(req, res) {
         const result = await UserService.getByID(req.params.id);
-        req.success(200, 'User is got successfully', result)
+        res.success(200, 'User is got successfully', result)
     }
 
 
