@@ -1,4 +1,5 @@
 const UserRepository = require('../repositories/userRepository');
+const RoleRepository = require('../repositories/roleRepository')
 const { ConflictException, NotFoundException } = require('../classes/errors/4xx');
 
 class UserService {
@@ -42,6 +43,7 @@ class UserService {
         await UserService.getByID(userID);
         await UserRepository.deleteByID(userID);
     }
+    
 }
 
 module.exports = UserService;

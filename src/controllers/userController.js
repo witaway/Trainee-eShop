@@ -1,4 +1,5 @@
 const UserService = require('../services/userService');
+const RoleService = require('../services/roleService')
 const DeletionRequestService = require('../services/deletionRequestService')
 
 const ResponseFormat = require('../helpers/responseFormat');
@@ -67,6 +68,32 @@ class UserController {
 
         res.status(200).json(ResponseFormat.success(
             200, 'User is deleted successfully', {}
+        )); 
+    }
+
+    static async giveAdminRoleByID(req, res) {
+        
+        const userID = req.params.id;
+        const adminRole = await RoleService.getRoleByName('admin');
+        const adminRoleID = adminRole.dataValues.id;
+
+        await RoleService.giveRoleToUser(userID, adminRoleID);
+        
+        res.status(200).json(ResponseFormat.success(
+            200, 'Role is given to user', {}
+        )); 
+    }
+
+    static async revokeAdminRoleByID(req, res) {
+        
+        const userID = req.params.id;
+        const adminRole = await RoleService.getRoleByName('admin');
+        const adminRoleID = adminRole.dataValues.id;
+
+        await RoleService.revokeRoleFromUser(userID, adminRoleID);
+        
+        res.status(200).json(ResponseFormat.success(
+            200, 'Role is revoked from user', {}
         )); 
     }
     

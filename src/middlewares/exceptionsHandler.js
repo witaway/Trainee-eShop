@@ -2,6 +2,7 @@ const { ReasonPhrases, StatusCodes } = require('http-status-codes')
 const statusCodeMessages = require('../constants/statusCodeMessages')
 const ResponseFormat = require('../helpers/responseFormat');
 
+// eslint-disable-next-line no-unused-vars
 const exceptionsHandler = (err, req, res, next) => {
     //If it's expected exception with defined http code
     if(Object.values(ReasonPhrases).includes(err.name)) {

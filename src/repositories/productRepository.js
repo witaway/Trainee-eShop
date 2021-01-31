@@ -22,7 +22,7 @@ class ProductRepository {
     }
 
     static async getProduct(id) {
-        const product = Product.findOne({
+        const product = await Product.findOne({
             attributes: ['id', 'name', 'description', 'imageUrl', 'cost', 'quantity', 'updatedAt'],
             where: {
                 id: id,
@@ -87,7 +87,7 @@ class ProductRepository {
             settings.offset = options.offset;
         }
 
-        return Product.findAll(settings);
+        return await Product.findAll(settings);
     }
 
     static async getAllProducts() {
@@ -111,8 +111,11 @@ class ProductRepository {
     }
 
     static async deleteProduct(id) {
-        const post = await Product.findByPk(id);
-        await post.destroy();
+        await Product.destroy({
+            where: {
+                id: id
+            }
+        });
     }
 }
 

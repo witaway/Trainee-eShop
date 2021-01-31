@@ -18,9 +18,6 @@ class ProductService {
 
     static async getListOfProducts(options) {
         const products = await ProductRepository.getListOfProducts(options);
-        if(!products) {
-            throw new NotFoundException("Product is not found");
-        }
         return products;
     }
 

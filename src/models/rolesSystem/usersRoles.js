@@ -13,7 +13,7 @@ const UsersRoles = sequelize.define('usersRoles', {
     timestamps: false
 })
 
-UsersRoles.associate = (models) => {
+UsersRoles.associate = (models) => {    
     models.Role.belongsToMany(models.User, { through: models.UsersRoles });
     models.User.belongsToMany(models.Role, { through: models.UsersRoles });
 };

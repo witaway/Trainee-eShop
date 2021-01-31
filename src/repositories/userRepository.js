@@ -1,4 +1,5 @@
 const User   = require('../models/users/user');
+const Role = require('../models/rolesSystem/role');
 const bcrypt = require("bcryptjs");
 
 class UserRepository {
@@ -18,7 +19,18 @@ class UserRepository {
     }
 
     static async getList() {
-        const users = User.findAll();
+        const users = await User.findAll({
+            attributes: [ 'id', 'username', 'email' ],
+            include: [
+                {
+                    model: Role,
+                    as: 'roles',
+                    // Excluded UsersRoles mapping object from results, cool!
+                    // https://stackoverflow.com/questions/45070595/sequelize-exclude-belongs-to-many-mapping-object
+                    through: { attributes: [] } 
+                }
+            ]
+        });
         return users;
     }
 
@@ -43,15 +55,54 @@ class UserRepository {
     }
 
     static async getByID(userId) {
-        return User.findOne({ where: { id: userId } });
+        const user = await User.findOne({
+            attributes: [ 'id', 'username', 'email' ],
+            where: { id: userId },
+            include: [
+                {
+                    model: Role,
+                    as: 'roles',
+                    // Excluded UsersRoles mapping object from results, cool!
+                    // https://stackoverflow.com/questions/45070595/sequelize-exclude-belongs-to-many-mapping-object
+                    through: { attributes: [] } 
+                }
+            ]
+        });
+        return user;
     }
 
     static async getByEMail(email) {
-        return User.findOne({ where: { email: email } });
+        const user = await User.findOne({
+            attributes: [ 'id', 'username', 'email' ],
+            where: { email: email },
+            include: [
+                {
+                    model: Role,
+                    as: 'roles',
+                    // Excluded UsersRoles mapping object from results, cool!
+                    // https://stackoverflow.com/questions/45070595/sequelize-exclude-belongs-to-many-mapping-object
+                    through: { attributes: [] } 
+                }
+            ]
+        });
+        return user;
     }
 
     static async getByUsername(username) {
-        return User.findOne({ where: { username: username } });
+        const user = await User.findOne({
+            attributes: [ 'id', 'username', 'email' ],
+            where: { username: username },
+            include: [
+                {
+                    model: Role,
+                    as: 'roles',
+                    // Excluded UsersRoles mapping object from results, cool!
+                    // https://stackoverflow.com/questions/45070595/sequelize-exclude-belongs-to-many-mapping-object
+                    through: { attributes: [] } 
+                }
+            ]
+        });
+        return user;
     }
 
 }
