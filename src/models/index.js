@@ -10,7 +10,7 @@ const RoutesAccess  = require('./rolesSystem/routesAccess');
 const UsersRoles    = require('./rolesSystem/usersRoles');
 
 const User          = require('./users/user');
-const DeleteRequest = require('./users/deleteRequest');
+const DeletionRequest = require('./users/deletionRequest');
 
 const models = {
     Favourites,
@@ -25,7 +25,7 @@ const models = {
     UsersRoles,
 
     User,
-    DeleteRequest
+    DeletionRequest
 };
 
 module.exports = models;

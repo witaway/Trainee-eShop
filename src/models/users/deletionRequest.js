@@ -1,26 +1,23 @@
 const { DataTypes } = require('sequelize');
 const sequelize     = require('../../sequelize').sequelize;
 
-const DeleteRequest = sequelize.define('deleteRequest', {
+const DeletionRequest = sequelize.define('deleteRequest', {
     'id': {
         type: DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
     },
-    'accepted': {
-        type: DataTypes.BOOLEAN
-    }
 }, {
-    tableName: 'delete_requests',
+    tableName: 'deletion_requests',
     timestamps: true,
     createdAt: true,
     updatedAt: false
 });
 
 //
-DeleteRequest.associate = (models) => {
-    DeleteRequest.hasOne(models.User);
+DeletionRequest.associate = (models) => {
+    models.User.hasOne(DeletionRequest);
 };
 
-module.exports = DeleteRequest;
+module.exports = DeletionRequest;
