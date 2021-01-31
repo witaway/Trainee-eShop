@@ -23,6 +23,7 @@ const connect = async () => {
     })
     
     await sequelize.sync({ alter: true });
+    //await sequelize.sync({ forced: true });
 };
 
 module.exports = { 
