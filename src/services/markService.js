@@ -18,7 +18,7 @@ class MarkService {
             throw new NotFoundException('User is not found');
         }
 
-        const mark = MarkRepository.getMark(userId, productID);
+        const mark = await MarkRepository.getMark(userId, productID);
         return mark;
     }
 
@@ -50,8 +50,7 @@ class MarkService {
             throw new NotFoundException('Mark is not found');
         }
 
-        const deletedMark = await MarkRepository.deleteMark(userId, productID);
-        return deletedMark;
+        await MarkRepository.deleteMark(userId, productID);
     }
 
     static async getAllProductMarks(productID) {

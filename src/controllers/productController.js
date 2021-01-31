@@ -59,9 +59,9 @@ class ProductController {
     }
 
     static async deleteByID(req, res) {
-        const result = await ProductService.deleteProduct(req.params.id);
+        await ProductService.deleteProduct(req.params.id);
         res.status(200).json(ResponseFormat.success(
-            200, 'Products is deleted successfully', result
+            200, 'Products is deleted successfully', {}
         )); 
     }
 }

@@ -15,6 +15,7 @@ const initExpressModules = (server) => {
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: false }));
     server.use(cookieParser('secret'));
+    
     server.use(passport.initialize());
 };
 

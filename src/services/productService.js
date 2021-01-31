@@ -46,8 +46,7 @@ class ProductService {
         if(!product) {
             throw new NotFoundException("Product is not found");
         }
-        const deletedProduct = await ProductRepository.deleteProduct(id);
-        return deletedProduct;
+        await ProductRepository.deleteProduct(id);
     }
 
 }

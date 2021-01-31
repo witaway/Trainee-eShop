@@ -112,10 +112,7 @@ class ProductRepository {
 
     static async deleteProduct(id) {
         const post = await Product.findByPk(id);
-        const deleted = await post.destroy();
-        delete deleted.dataValues.createdAt;
-        delete deleted.dataValues.deletedAt;
-        return deleted;
+        await post.destroy();
     }
 }
 

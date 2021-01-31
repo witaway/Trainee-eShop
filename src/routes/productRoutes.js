@@ -4,12 +4,8 @@ const router = Router();
 const ProductController = require('../controllers/productController');
 const MarkRouter = require('./markRoutes');
 
-const passport = require("passport");
 const validator =  require('../middlewares/validator');
-
 const ProductSchemas = require('../schemas/productSchemas');
-
-router.use(passport.authenticate("jwt", { session: false }));
 
 router.use('/:id/mark/', MarkRouter);
 

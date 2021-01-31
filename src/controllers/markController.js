@@ -19,9 +19,9 @@ class MarkController {
 	}
 
 	static async delete(req, res) {
-        const result = await MarkService.deleteProduct(req.user, req.params.id);
+        await MarkService.deleteProduct(req.user, req.params.id);
         res.status(200).json(ResponseFormat.success(
-            200, 'Mark is deleted successfully', result
+            200, 'Mark is deleted successfully', {}
         )); 
     }
 

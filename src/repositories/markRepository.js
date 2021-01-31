@@ -41,7 +41,7 @@ class MarkRepository {
                 productId: productID
             }
         });
-        return mark.destroy();
+        await mark.destroy();
     }
 
     static async getAllProductMarks(productID) {

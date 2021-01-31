@@ -38,9 +38,8 @@ class UserRepository {
     }
 
     static async deleteByID(userID) {
-        
         const user = await User.findByPk(userID);
-        return user.destroy();
+        await user.destroy();
     }
 
     static async getByID(userId) {
@@ -51,7 +50,7 @@ class UserRepository {
         return User.findOne({ where: { email: email } });
     }
 
-    static async getByUsernamee(username) {
+    static async getByUsername(username) {
         return User.findOne({ where: { username: username } });
     }
 
