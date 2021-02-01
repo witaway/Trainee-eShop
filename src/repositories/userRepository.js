@@ -9,7 +9,7 @@ class UserRepository {
         const salt = bcrypt.genSaltSync(3);
         const password = personalInfo.password;
         
-        const user = User.create({
+        const user = await User.create({
           username: personalInfo.username,
           email:    personalInfo.email,
           password: bcrypt.hashSync(password, salt),

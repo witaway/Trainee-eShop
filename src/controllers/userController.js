@@ -2,6 +2,7 @@ const UserService = require('../services/userService');
 const RoleService = require('../services/roleService')
 const DeletionRequestService = require('../services/deletionRequestService')
 
+const Mailer         = require('../classes/mailer');
 const ResponseFormat = require('../helpers/responseFormat');
 
 class UserController {
@@ -62,9 +63,17 @@ class UserController {
 
     static async acceptDeletionRequest(req, res) {
         
-        const userID = req.params.id;
+        const userID     = req.params.id;
+        const userObject = await UserService.getByID(userID);
+
         await DeletionRequestService.deleteByUserID(userID);
         await UserService.deleteByID(userID)
+
+        Mailer.sendMail(
+            userObject.dataValues.email,
+            'Good bye! :(',
+            'Your account is deleted successfully'
+        );
 
         res.status(200).json(ResponseFormat.success(
             200, 'User is deleted successfully', {}

@@ -1,6 +1,7 @@
 const DeletionRequestRepository = require('../repositories/deletionRequestRepository')
 const UserService = require('../services/userService');
 
+const Mailer = require('../classes/mailer');
 const { ConflictException, NotFoundException } = require('../classes/errors/4xx');
 
 class DeletionRequestService {
@@ -53,6 +54,14 @@ class DeletionRequestService {
         const deletionRequest = await DeletionRequestService.getByID(requestID);
         
         const userID = deletionRequest.userId;
+        const userObject = await UserService.getByID(userID);
+
+        Mailer.sendMail(
+            userObject.dataValues.email,
+            'Good bye! :(',
+            'Your account is deleted successfully'
+        );
+
         await DeletionRequestRepository.deleteByID(requestID);
         await UserService.deleteByID(userID);
     }
