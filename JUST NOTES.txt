@@ -1,0 +1,120 @@
+{
+    "sort_by": "none/name"/"date_of_update"/"cost",
+    "order": "asc"/"desc",
+    "only_with_pictures": true,
+    count: 12,
+    offset: 10
+}
+
+
+{
+    "email": "first@gmail.com",
+    "username": "first@gmail.com",
+    "password": "first"
+}
+=>
+{
+    "id": 4,
+    "username": "first@gmail.com",
+    "email": "first@gmail.com",
+    "password": "$2a$04$y5sNucnevEy5ihwnVVQwk.tHXLu8mgOWa3vsS0QDgV2Bc5bQe7Acm",
+    "createdAt": "2021-01-21T00:55:58.138Z"
+}
+
+
+----------------------------
+
+POST   /products/tags
+GET    /products/tags
+
+GET    /products/tags/:id
+PUT    /products/tags/:id
+DELETE /products/tags/:id
+
+----------------------------
+
+GET  /products/:id/tags
+POST /products/:id/tags
+
+----------------------------
+
+TODO:
+ - Если оценок нет, пусть средняя будет 0
+ - Добавить количество оценок
+
+Из основного НЕ сделано: 12, 13, 14, 15, 16
+Из дополнительных сделано: 1, 4, 9
+
+----------------------------
+
+1.  x Доработать механизм запросов на удаление.
+2.  x Написать разделение прав, базовое.
+3.  x Написать Email-рассылку.
+4.  x Реализовать эндпоинты для аналитики.
+5.  _ Добавить в приложение работу с файлами.
+6.  x Автоудаление пользователей через CRON.
+7.  x Добавить логгирование с сохранением в MongoDB. <
+8.  _ Добавить пользователям имена и фамилии.
+9.  _ Реализовать поиск по пользователям (имя и фамилия)
+10. _ Реализовать поиск по товарам (частичное совпадение названия)
+11. _ Довать поиск по товарам по описаниям через ElasticSearch.
+12. x Написать схемы для API. <
+___________________________________________________________________13. _ Написать тесты.
+___________________________________________________________________14. _ Реализовать минимальный CI-процесс. < 
+15. _ Запихнуть приложение в докер-контейнер. <
+16. _ Для удаления товара реализовать механизм транзакций.
+17. x В главный файл добавить базовую обработку ошибок.
+
+HOT FIXES !!!!!!
+18. x Пофиксить всю херь с тем, что destroy на самом деле возвращает не удалённый объект, а 0/1
+19. x Проверить dataValues
+___________________________________________________________________20. _ Улучшить нейминг в контроллерах, сервисах и репозиториях. Привести к аналогичному из roles.
+___________________________________________________________________21. _ Конкретизировать :id в роутерах.
+
+ФИЧА 2 (Разделение прав) САБТАСКИ:
+1. x Создать роуты, контроллер, сервис и репозиторий.
+2. x Создать миддлвар isAdmin
+3. x Добавить инфу о ролях в выдачу.
+
+ФИЧА 4 (аналитика) САБТАСКИ:
+1. x Товар, который за выбранный месяц имеет наибольшее количество оценок.
+2. x Найти пользователя, который поставил наибольшее количество оценок, которые меньше, чем средяя среди всех товаров.
+
+first
+cockporn
+
+Запрос фичи 1:
+
+SELECT pm1.productId as `id`, pr.name as `name`, pr.description as `description`, pr.image_url as `imageUrl`,
+       pr.cost as `cost`, pr.quantity as `quantity`, pr.updatedAt as `updatedAt`, 
+       (SELECT CAST(AVG(pm2.mark) AS DECIMAL(12, 2)) FROM products_marks as pm2 WHERE pm2.productId = pr.id) as `avg`, 
+       count(pm1.mark) as `cnt`
+
+FROM products_marks as pm1
+
+INNER JOIN products as pr
+ON pm1.productId = pr.id
+
+WHERE MONTH(pm1.updatedAt) = 0 AND YEAR(pm1.updatedAt) = 0
+GROUP BY pm1.productId
+ORDER BY `cnt` DESC
+LIMIT 1;
+
+Запрос фичи 2:
+
+    SELECT pm_a.userId, users.email as `email`, users.username as `username`, count(pm_a.mark) as `cnt`
+    FROM products_marks as pm_a
+    INNER JOIN users
+    ON pm_a.userId = users.id
+    WHERE pm_a.mark < (
+        SELECT avg(pm_b.mark)
+        FROM products_marks as pm_b
+    )
+    group by pm_a.userId
+    order by `cnt` DESC
+    LIMIT 1;
+
+logout: Joi.object({
+    body: Joi.object({}),
+    params: Joi.object({})
+})
