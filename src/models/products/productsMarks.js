@@ -17,7 +17,9 @@ const ProductsMarks = sequelize.define('productsMarks', {
     }
 }, {
     tableName: 'products_marks',
-    timestamps: false,
+    timestamps: true,
+    createdAt: false,
+    updatedAt: true
 });
 
 ProductsMarks.associate = (models) => {

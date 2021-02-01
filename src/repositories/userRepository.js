@@ -73,7 +73,7 @@ class UserRepository {
 
     static async getByEMail(email) {
         const user = await User.findOne({
-            attributes: [ 'id', 'username', 'email' ],
+            attributes: [ 'id', 'username', 'email', 'password' ],
             where: { email: email },
             include: [
                 {
@@ -90,7 +90,7 @@ class UserRepository {
 
     static async getByUsername(username) {
         const user = await User.findOne({
-            attributes: [ 'id', 'username', 'email' ],
+            attributes: [ 'id', 'username', 'email', 'password' ],
             where: { username: username },
             include: [
                 {
