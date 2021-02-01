@@ -22,9 +22,14 @@ class AuthController {
         ));
     }
 
-    static async loginWithEmailAndPassword(req, res) {
-        const token = await AuthService.loginWithEmailAndPassword(
-            req.body.email,
+    static async login(req, res) {
+        
+        const loginFunction = (req.body.email ? AuthService.loginWithEmailAndPassword : 
+                                                AuthService.loginWithUsernameAndPassword);
+        const login = (req.body.email ? req.body.email : req.body.username);
+
+        const token = await loginFunction(
+            login,
             req.body.password
         );
 
