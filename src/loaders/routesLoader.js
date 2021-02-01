@@ -1,8 +1,12 @@
 const passport = require("passport");
-const exceptionsHandler = require('../middlewares/exceptionsHandler')
+const exceptionsHandler = require('../middlewares/exceptionsHandler');
+const loggerMiddleware = require('../middlewares/logger');
 
 const setupRoutes = (server) => {
     
+    // Logging
+    server.use(loggerMiddleware);
+
     // Doesn't need authentication
     server.use('/auth',     require('../routes/authRoutes'))
     
