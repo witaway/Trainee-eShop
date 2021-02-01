@@ -2,7 +2,7 @@
     "database": "onlineshop",
     "username": "root",
     "password": "password",
-    "host":     "localhost",
+    "host":     "mysql",
     "dialect":  "mysql",
     "logging":  true
 }

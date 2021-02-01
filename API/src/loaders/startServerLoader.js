@@ -2,7 +2,7 @@ const initStartServer = (server) => {
     
   console.log('SETUP - Starting server..');
 
-  const PORT = global.process.env.PORT;
+  const PORT = global.process.env.PORT || 8000;
   server.listen(PORT, (error) => {
     if (error) {
       console.log('ERROR - Unable to start server.');

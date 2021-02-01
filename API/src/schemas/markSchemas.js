@@ -1,4 +1,4 @@
-const Joi = require('Joi');
+const Joi = require('joi');
 
 const id = Joi.number().integer().required();
 const markValue = Joi.number().integer().min(1).max(5).required();
