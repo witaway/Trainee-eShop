@@ -3,7 +3,10 @@ const router = Router();
 
 const AnalyticsController = require('../controllers/analyticsController');
 
-router.get('/getProduct/:year/:month', AnalyticsController.getProduct);
-router.get('/getUser',                 AnalyticsController.getUser);
+const validator =  require('../middlewares/validator');
+const schemas = require('../schemas/analyticsSchemas');
+
+router.get('/getProduct/:year/:month', validator(schemas.getProduct), AnalyticsController.getProduct);
+router.get('/getUser',                 validator(schemas.getUser),    AnalyticsController.getUser);
 
 module.exports = router;

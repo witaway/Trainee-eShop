@@ -6,7 +6,7 @@ const router = Router({
 const MarkController = require('../controllers/markController');
 
 const validator =  require('../middlewares/validator');
-const MarksSchemas = require('../schemas/markShemas');
+const MarksSchemas = require('../schemas/markSchemas');
 
 router.get('/',        validator(MarksSchemas.get),    MarkController.get);
 router.post('/',       validator(MarksSchemas.set),    MarkController.set);

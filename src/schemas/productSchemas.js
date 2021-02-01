@@ -1,22 +1,24 @@
 const Joi = require('Joi');
 
+const id = Joi.number().integer().required();
+
+const productObject = Joi.object({
+    name: Joi.string().min(5).max(100).required(),
+    description: Joi.string().min(0).max(2000).default(''),
+    image: Joi.string().uri().max(300).default(null),
+    cost: Joi.number().min(0).precision(2).required(),
+    quantity: Joi.number().integer().min(0).required()                
+});
+
 module.exports = {
 
     create: Joi.object({
         params: Joi.object({}),
-        body: Joi.object({
-            name: Joi.string().min(5).max(100).required(),
-            description: Joi.string().min(0).max(2000).default(''),
-            image: Joi.string().uri().max(300).default(null),
-            cost: Joi.number().min(0).precision(2).required(),
-            quantity: Joi.number().integer().min(0).required()                
-        })
+        body: productObject
     }),
 
     getByID: Joi.object({
-        params: Joi.object({
-            id: Joi.number().integer().required()
-        }),
+        params: Joi.object({ id }),
         body: Joi.object({})
     }),
 
@@ -33,28 +35,13 @@ module.exports = {
         })
     }),
 
-    getAll: Joi.object({
-        params: Joi.object({}),
-        body: Joi.object({})
-    }),
-
     editByID: Joi.object({
-        params: Joi.object({
-            id: Joi.number().integer().required()
-        }),
-        body: Joi.object({
-            name: Joi.string().min(5).max(100).required(),
-            description: Joi.string().min(0).max(2000).default(''),
-            image: Joi.string().uri().max(300).default(null),
-            cost: Joi.number().min(0).precision(2).required(),
-            quantity: Joi.number().integer().min(0).required()    
-        })
+        params: Joi.object({ id }),
+        body: productObject
     }),
 
     deleteByID: Joi.object({
-        params: Joi.object({
-            id: Joi.number().integer().required()
-        }),
+        params: Joi.object({ id }),
         body: Joi.object({})
     })
 

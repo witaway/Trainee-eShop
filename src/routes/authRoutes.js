@@ -3,8 +3,11 @@ const router = Router();
 
 const AuthController = require('../controllers/authController')
 
-router.post('/register',  AuthController.register);
-router.get('/login',      AuthController.loginWithEmailAndPassword);
-router.get('/logout',     AuthController.logout);
+const validator =  require('../middlewares/validator');
+const schemas = require('../schemas/authSchemas');
+
+router.post('/register',  validator(schemas.register), AuthController.register);
+router.get('/login',      validator(schemas.login),    AuthController.loginWithEmailAndPassword);
+router.get('/logout',     validator(schemas.logout),   AuthController.logout);
 
 module.exports = router;

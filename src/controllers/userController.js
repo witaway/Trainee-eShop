@@ -41,7 +41,7 @@ class UserController {
     static async updateByID(req, res) {
         const result = await UserService.updateByID(req.params.id, {
             username: req.body.username,
-            email: req.body.email,
+            email:    req.body.email,
             password: req.body.password
         });
         res.status(200).json(ResponseFormat.success(

@@ -3,11 +3,14 @@ const router = Router();
 
 const RoleController = require('../controllers/roleController');
 
-router.post('/',      RoleController.createRole);
-router.get('/',       RoleController.getListOfRoles);
+const validator =  require('../middlewares/validator');
+const schemas = require('../schemas/roleSchemas');
 
-router.get('/:id',    RoleController.getRoleByID);
-router.put('/:id',    RoleController.editRoleByID);
-router.delete('/:id', RoleController.deleteRoleByID);
+router.post('/',      validator(schemas.createRole),     RoleController.createRole);
+router.get('/',       validator(schemas.getListOfRoles), RoleController.getListOfRoles);
+
+router.get('/:id',    validator(schemas.getRoleByID),    RoleController.getRoleByID);
+router.put('/:id',    validator(schemas.editRoleByID),   RoleController.editRoleByID);
+router.delete('/:id', validator(schemas.deleteRoleByID), RoleController.deleteRoleByID);
 
 module.exports = router;
