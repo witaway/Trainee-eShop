@@ -3,6 +3,7 @@ const initExpressModules = require('./expressModulesLoader');
 const initRoutes         = require('./routesLoader');
 const initStartServer    = require('./startServerLoader');
 const connect            = require('../sequelize').connect;
+const initCron           = require('../scripts/cron');
 
 const createInfo = require('../logger').createInfo;
 
@@ -41,6 +42,10 @@ const superLoader = async (server) => {
         message: "Server is started up!"
     });
 
+    initCron();
+    createInfo({
+        message: "Cron is started up."
+    });
 }
 
 module.exports = superLoader;
