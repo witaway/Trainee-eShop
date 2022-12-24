@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="Global reformat">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/badRequestException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/badRequestException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/conflictException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/conflictException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/forbiddenException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/forbiddenException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/goneExcpetion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/goneExcpetion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/notFoundException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/notFoundException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/retryWithException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/retryWithException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/unauthorizedException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/unauthorizedException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/unprocessableEntityException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/unprocessableEntityException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/5xx/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/5xx/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/5xx/internalServerException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/5xx/internalServerException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/5xx/notImplementedException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/5xx/notImplementedException.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/errors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/mailer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/statusCodeMessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/statusCodeMessages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/analyticsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/analyticsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/deletionRequestsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/deletionRequestsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/markController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/markController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/roleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/roleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/responseFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/responseFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/dotenvLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/dotenvLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/expressModulesLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/expressModulesLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/passportStrategiesLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/passportStrategiesLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/routesLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/routesLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/startServerLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/startServerLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/exceptionsHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/exceptionsHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/isAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/isAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/logger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/products/favourites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/products/favourites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/products/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/products/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/products/productsMarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/products/productsMarks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/products/productsTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/products/productsTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/products/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/products/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/rolesSystem/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/rolesSystem/role.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/rolesSystem/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/rolesSystem/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/rolesSystem/routesAccess.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/rolesSystem/routesAccess.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/rolesSystem/usersRoles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/rolesSystem/usersRoles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/users/deletionRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/users/deletionRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/users/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/users/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/authRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/authRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/deletionRequestRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/deletionRequestRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/markRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/markRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/productRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/productRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/roleRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/roleRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/userRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/analyticsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/analyticsRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/deletionRequestRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/deletionRequestRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/markRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/markRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/productRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/roleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/roleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/analyticsSchemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/analyticsSchemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/authSchemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/authSchemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/deletionRequestsSchemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/deletionRequestsSchemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/markSchemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/markSchemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/productSchemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/productSchemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/roleSchemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/roleSchemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/userSchemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/userSchemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/cron.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/cron.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sequelize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sequelize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/authService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/deletionRequestService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/deletionRequestService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/markService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/markService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/productService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/roleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/roleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="46dee76066ffa5a0b8e88be266127aecaad537dd" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1671898956" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JMqzrHuD27cFWJG7eRESoUoDBk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/witaw/Documents/!Projects/referendum2022&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\witaw\\Documents\\!Projects\\Trainee-eShop\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\witaw\Documents\!Projects\Trainee-eShop" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="" />
+      <created>1671898565477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671898565477</updated>
+      <workItem from="1671898567602" duration="447000" />
+      <workItem from="1671899020089" duration="6253000" />
+      <workItem from="1671905398184" duration="306000" />
+    </task>
+    <task id="LOCAL-00001" summary="Little refactor of project structure">
+      <created>1671899385128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671899385128</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added linting with prettier and integrated it with eslint">
+      <created>1671904079639</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671904079639</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Little refactor of project structure" />
+    <MESSAGE value="Added linting with prettier and integrated it with eslint" />
+    <MESSAGE value="Global reformat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Global reformat" />
+  </component>
+</project>
