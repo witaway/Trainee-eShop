@@ -4,7 +4,6 @@ const User = require('../models/users/user');
 const process = require('process');
 
 const setupPassportStrategies = (passport) => {
-    
     const extractJwtFromCookiesField = (field) => {
         return (req) => {
             let token = null;
@@ -16,31 +15,40 @@ const setupPassportStrategies = (passport) => {
     };
 
     const options = {
-        jwtFromRequest : extractJwtFromCookiesField('jwt'), 
-        secretOrKey: process.env.JWTPrivateKey
+        jwtFromRequest: extractJwtFromCookiesField('jwt'),
+        secretOrKey: process.env.JWTPrivateKey,
     };
-    
+
     passport.use(
         new JwtStrategy(options, async (payload, done) => {
-            try { 
-                const user =  await User.findOne({ attributes: ['id'], where: { id: payload.id }, raw: true }, );
+            try {
+                const user = await User.findOne({
+                    attributes: ['id'],
+                    where: { id: payload.id },
+                    raw: true,
+                });
                 if (user) {
                     return done(null, user.id);
                 } else {
                     return done(null, false);
                     // or you could create a new account
                 }
-            } catch(err) { 
+            } catch (err) {
                 done(err, false);
             }
-        }));
+        }),
+    );
 
     passport.serializeUser(function (user, done) {
         done(null, user.id);
     });
 
     passport.deserializeUser(function (user, done) {
-        User.findOne({ attributes: ['id'], where: { id: user.id }, raw: true }).then((user) => {
+        User.findOne({
+            attributes: ['id'],
+            where: { id: user.id },
+            raw: true,
+        }).then((user) => {
             done(null, user.id);
         });
     });

@@ -1,33 +1,35 @@
 const UserRepository = require('../repositories/userRepository');
-const RoleRepository = require('../repositories/roleRepository')
-const { ConflictException, NotFoundException } = require('../classes/errors/4xx');
+const {
+    ConflictException,
+    NotFoundException,
+} = require('../classes/errors/4xx');
 
 class UserService {
-
     static async create(personalInfo) {
+        const userWithGivenEmail = await UserRepository.getByEMail(
+            personalInfo.email,
+        );
+        const userWithGivenUsername = await UserRepository.getByUsername(
+            personalInfo.username,
+        );
 
-        const userWithGivenEmail    = await UserRepository.getByEMail(personalInfo.email);
-        const userWithGivenUsername = await UserRepository.getByUsername(personalInfo.username);
-        
-        if(userWithGivenEmail) {
-            throw new ConflictException("This email is already in use");
+        if (userWithGivenEmail) {
+            throw new ConflictException('This email is already in use');
         }
-        if(userWithGivenUsername) {
-            throw new ConflictException("This username is already in use");
+        if (userWithGivenUsername) {
+            throw new ConflictException('This username is already in use');
         }
 
-        const newUserPersonalInfo = await UserRepository.create(personalInfo);  
-        return newUserPersonalInfo;
+        return UserRepository.create(personalInfo);
     }
 
     static async getList() {
-        const users = await UserRepository.getList();
-        return users;
+        return UserRepository.getList();
     }
 
     static async getByID(userID) {
         const user = await UserRepository.getByID(userID);
-        if(!user) {
+        if (!user) {
             throw new NotFoundException('User is not found');
         }
         return user;
@@ -35,15 +37,13 @@ class UserService {
 
     static async updateByID(userID, personalInfo) {
         await UserService.getByID(userID);
-        const user = await UserRepository.updateByID(userID, personalInfo);
-        return user;
+        return UserRepository.updateByID(userID, personalInfo);
     }
 
     static async deleteByID(userID) {
         await UserService.getByID(userID);
         await UserRepository.deleteByID(userID);
     }
-    
 }
 
 module.exports = UserService;

@@ -1,17 +1,21 @@
 const { DataTypes } = require('sequelize');
-const sequelize     = require('../../sequelize').sequelize;
+const sequelize = require('../../sequelize').sequelize;
 
-const ProductsTags = sequelize.define('productsTags', {
-    'id': {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true
-    }
-}, {
-    tableName: 'products_tags',
-    timestamps: false,
-});
+const ProductsTags = sequelize.define(
+    'productsTags',
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+    },
+    {
+        tableName: 'products_tags',
+        timestamps: false,
+    },
+);
 
 ProductsTags.associate = (models) => {
     models.Product.belongsToMany(models.Tag, { through: models.ProductsTags });

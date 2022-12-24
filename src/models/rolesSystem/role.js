@@ -1,24 +1,26 @@
 const { DataTypes } = require('sequelize');
-const sequelize     = require('../../sequelize').sequelize;
+const sequelize = require('../../sequelize').sequelize;
 
-const Role = sequelize.define('role', {
-    'id': {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true
-    }, 
-    'name': {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-}, {
-    tableName: 'roles',
-    indexes: [
-        {uniqie: true, fields: ['name']},
-    ],
-    timestamps: false
-});
+const Role = sequelize.define(
+    'role',
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    },
+    {
+        tableName: 'roles',
+        indexes: [{ uniqie: true, fields: ['name'] }],
+        timestamps: false,
+    },
+);
 
 Role.associate = (models) => {
     models;

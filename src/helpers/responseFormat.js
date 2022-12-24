@@ -1,8 +1,7 @@
 class ResponseFormat {
-    
     static success(statusCode, message, object) {
         return {
-            data: object, 
+            data: object,
             message: message,
             status: 'success',
             statusCode: statusCode,
@@ -11,7 +10,7 @@ class ResponseFormat {
 
     static error(statusCode, message, object) {
         return {
-            error: object, 
+            error: object,
             message: message,
             status: 'failed',
             statusCode: statusCode,

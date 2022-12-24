@@ -1,52 +1,47 @@
-const MarkRepository    = require('../repositories/markRepository');
+const MarkRepository = require('../repositories/markRepository');
 const ProductRepository = require('../repositories/productRepository');
-const UserRepository    = require('../repositories/userRepository');
+const UserRepository = require('../repositories/userRepository');
 
 const { NotFoundException } = require('../classes/errors/4xx');
 
 class MarkService {
-
     static async getMark(userId, productID) {
-
         const product = await ProductRepository.getProduct(productID);
-        const user    = await UserRepository.getByID(userId);
+        const user = await UserRepository.getByID(userId);
 
-        if(!product) {
+        if (!product) {
             throw new NotFoundException('Product is not found');
         }
-        if(!user) {
+        if (!user) {
             throw new NotFoundException('User is not found');
         }
 
-        const mark = await MarkRepository.getMark(userId, productID);
-        return mark;
+        return MarkRepository.getMark(userId, productID);
     }
 
     static async setMark(userId, productID, value) {
-
         const product = await ProductRepository.getProduct(productID);
-        const user    = await UserRepository.getByID(userId);
+        const user = await UserRepository.getByID(userId);
 
-        if(!product) {
+        if (!product) {
             throw new NotFoundException('Product is not found');
         }
-        if(!user) {
+        if (!user) {
             throw new NotFoundException('User is not found');
         }
 
-        const mark = await MarkRepository.setMark(userId, productID, value);
-        return mark;
+        return MarkRepository.setMark(userId, productID, value);
     }
 
     static async deleteMark(userId, productID) {
         const mark = await MarkRepository.findOne({
             where: {
-                userId:    userId,
-                productId: productID
-            }
+                userId: userId,
+                productId: productID,
+            },
         });
 
-        if(!mark) {
+        if (!mark) {
             throw new NotFoundException('Mark is not found');
         }
 
@@ -55,22 +50,19 @@ class MarkService {
 
     static async getAllProductMarks(productID) {
         const product = await ProductRepository.getProduct(productID);
-        if(!product) {
+        if (!product) {
             throw new NotFoundException('Product is not found');
         }
-        const marks = await MarkRepository.getAllProductMarks(productID);
-        return marks;
+        return MarkRepository.getAllProductMarks(productID);
     }
 
     static async getProductMarksAverage(productID) {
         const product = await ProductRepository.getProduct(productID);
-        if(!product) {
+        if (!product) {
             throw new NotFoundException('Product is not found');
         }
-        const average = await MarkRepository.getProductMarksAverage(productID);
-        return average;
+        return MarkRepository.getProductMarksAverage(productID);
     }
-
 }
 
 module.exports = MarkService;

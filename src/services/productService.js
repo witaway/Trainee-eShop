@@ -1,51 +1,46 @@
-const ProductRepository     = require('../repositories/productRepository');
+const ProductRepository = require('../repositories/productRepository');
 const { NotFoundException } = require('../classes/errors/4xx');
 
 class ProductService {
-
     static async createProduct(productObject) {
-        const createdProduct = await ProductRepository.createProduct(productObject);
-        return createdProduct;
+        return ProductRepository.createProduct(productObject);
     }
 
     static async getProduct(id) {
         const product = await ProductRepository.getProduct(id);
-        if(!product) {
-            throw new NotFoundException("Product is not found");
+        if (!product) {
+            throw new NotFoundException('Product is not found');
         }
         return product;
     }
 
     static async getListOfProducts(options) {
-        const products = await ProductRepository.getListOfProducts(options);
-        return products;
+        return ProductRepository.getListOfProducts(options);
     }
 
     static async getAllProducts() {
         const products = await ProductRepository.getAllProducts();
-        if(!products) {
-            throw new NotFoundException("Product is not found");
+        if (!products) {
+            throw new NotFoundException('Product is not found');
         }
         return products;
     }
 
     static async editProduct(id, productObject) {
         const product = await ProductRepository.getProduct(id);
-        if(!product) {
-            throw new NotFoundException("Product is not found");
+        if (!product) {
+            throw new NotFoundException('Product is not found');
         }
-        const newProduct = await ProductRepository.editProduct(id, productObject);
-        return newProduct;
+        return ProductRepository.editProduct(id, productObject);
     }
 
     static async deleteProduct(id) {
         const product = await ProductRepository.getProduct(id);
-        if(!product) {
-            throw new NotFoundException("Product is not found");
+        if (!product) {
+            throw new NotFoundException('Product is not found');
         }
         await ProductRepository.deleteProduct(id);
     }
-
 }
 
 module.exports = ProductService;

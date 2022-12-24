@@ -3,5 +3,5 @@ const NotImplementedException = require('./notImplementedException');
 
 module.exports = {
     InternalServerException,
-    NotImplementedException
+    NotImplementedException,
 };

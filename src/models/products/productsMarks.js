@@ -1,26 +1,30 @@
 const { DataTypes } = require('sequelize');
-const sequelize     = require('../../sequelize').sequelize;
+const sequelize = require('../../sequelize').sequelize;
 
-const ProductsMarks = sequelize.define('productsMarks', {
-    'id': {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true
+const ProductsMarks = sequelize.define(
+    'productsMarks',
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+        mark: {
+            type: DataTypes.INTEGER,
+            validate: {
+                min: 1,
+                max: 5,
+            },
+        },
     },
-    'mark': {
-        type: DataTypes.INTEGER,
-        validate: {
-            min: 1,
-            max: 5
-        }
-    }
-}, {
-    tableName: 'products_marks',
-    timestamps: true,
-    createdAt: false,
-    updatedAt: true
-});
+    {
+        tableName: 'products_marks',
+        timestamps: true,
+        createdAt: false,
+        updatedAt: true,
+    },
+);
 
 ProductsMarks.associate = (models) => {
     models.Product.hasMany(models.ProductsMarks);

@@ -1,48 +1,52 @@
 const { DataTypes } = require('sequelize');
-const sequelize     = require('../../sequelize').sequelize;
+const sequelize = require('../../sequelize').sequelize;
 
-const User = sequelize.define('user', {
-    'id': {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true
-    }, 
-    'username': {
-        type: DataTypes.STRING,
-        allowNull: false
+const User = sequelize.define(
+    'user',
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isEmail: true,
+            },
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                notNull: true,
+                min: 8,
+            },
+        },
     },
-    'email': {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            isEmail: true
-        }
+    {
+        tableName: 'users',
+
+        indexes: [
+            { uniqie: true, fields: ['username'] },
+            { uniqie: true, fields: ['email'] },
+        ],
+
+        paranoid: true,
+
+        timestamps: true,
+        createdAt: true,
+        updatedAt: false,
+        deletedAt: true,
     },
-    'password': {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            notNull: true,
-            min: 8
-        }
-    }
-}, {
-    tableName: 'users',
-    
-    indexes: [
-        {uniqie: true, fields: ['username']},
-        {uniqie: true, fields: ['email']}
-    ],
-    
-    paranoid: true,
-    
-    timestamps: true,
-    createdAt: true,
-	updatedAt: false,
-	deletedAt: true
-});
+);
 
 User.associate = (models) => {
     models;

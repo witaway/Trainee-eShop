@@ -1,4 +1,4 @@
-const { createLog, createError } = require('../logger');
+const { createLog } = require('../logger');
 
 const loggingMiddleware = async (req, res, next) => {
     await next();

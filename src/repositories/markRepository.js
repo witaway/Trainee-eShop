@@ -1,69 +1,70 @@
 const ProductsMarks = require('../models/products/productsMarks');
-const sequelize     = require('../sequelize').sequelize;
+const sequelize = require('../sequelize').sequelize;
 
 class MarkRepository {
-
     static async setMark(userId, productID, value) {
         const mark = await ProductsMarks.findOne({
             where: {
-                userId:    userId,
-                productId: productID
-            }
+                userId: userId,
+                productId: productID,
+            },
         });
-        if(mark == null) {
-            return ProductsMarks.create({ 
-                userId:     userId,
-                productId:  productID,
-                mark:       value
+        if (mark == null) {
+            return ProductsMarks.create({
+                userId: userId,
+                productId: productID,
+                mark: value,
             });
         } else {
             return mark.update({
-                mark: value    
+                mark: value,
             });
         }
     }
 
-
     static async getMark(userId, productID) {
-        const mark = await ProductsMarks.findOne({
+        return ProductsMarks.findOne({
             where: {
-                userId:    userId,
-                productId: productID
-            }
+                userId: userId,
+                productId: productID,
+            },
         });
-        return mark;
     }
 
     static async deleteMark(userId, productID) {
         const mark = await ProductsMarks.findOne({
             where: {
-                userId:    userId,
-                productId: productID
-            }
+                userId: userId,
+                productId: productID,
+            },
         });
         await mark.destroy();
     }
 
     static async getAllProductMarks(productID) {
         return ProductsMarks.findAll({
-            attributes: [
-                ['id', 'markId'], 'mark', 'userId', 'productId'
-            ],
+            attributes: [['id', 'markId'], 'mark', 'userId', 'productId'],
             where: {
-                productId: productID
-            }
+                productId: productID,
+            },
         });
     }
 
     static async getProductMarksAverage(productID) {
         const marksSummary = await ProductsMarks.findOne({
             attributes: [
-                [sequelize.cast(sequelize.fn('AVG', sequelize.col('mark')), 'DECIMAL(12, 2)'), 'avg']
+                [
+                    sequelize.cast(
+                        sequelize.fn('AVG', sequelize.col('mark')),
+                        'DECIMAL(12, 2)',
+                    ),
+                    'avg',
+                ],
             ],
             where: {
-                productId: productID
+                productId: productID,
             },
-            raw: true
+            raw: true,
         });
         return marksSummary.avg;
     }
