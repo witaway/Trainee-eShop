@@ -4,9 +4,6 @@ const { createInfo, createError } = require('./logger');
 const init = require('./loaders');
 const dbConnect = require('./logger').connect;
 
-let a = 1;
-console.log(a);
-
 (async () => {
     try {
         await dbConnect();
