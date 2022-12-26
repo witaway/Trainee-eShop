@@ -1,4 +1,4 @@
-const Joi = require('Joi');
+const Joi = require('joi');
 
 const username = Joi.string().max(50);
 const email = Joi.string().max(255);
