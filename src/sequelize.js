@@ -1,17 +1,12 @@
 const Sequelize = require('sequelize');
 
-const dbConfig = require('./config/database.json');
+const env = require('./env');
 
-const sequelize = new Sequelize(
-    dbConfig.database,
-    dbConfig.username,
-    dbConfig.password,
-    {
-        dialect: dbConfig.dialect,
-        host: dbConfig.host,
-        logging: dbConfig.logging,
-    },
-);
+const sequelize = new Sequelize(env.DB_NAME, env.DB_USER, env.DB_PASSWORD, {
+    dialect: env.DB_DIALECT,
+    host: env.DB_HOST,
+    logging: env.DB_USE_LOGGING,
+});
 
 const connect = async () => {
     const models = require('./models');

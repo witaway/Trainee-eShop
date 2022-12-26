@@ -1,8 +1,0 @@
-{
-    "hostName": "mail.cock.li",
-    "port":     465,
-    "secure":   true,
-    "email":    "eshopTesting@cock.li",
-    "password": "eshopTesting",
-    "siteName": "eShop-catalogue"
-}

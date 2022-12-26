@@ -1,7 +1,9 @@
+const env = require('../env');
+
 const initStartServer = (server) => {
     console.log('SETUP - Starting server..');
 
-    const PORT = global.process.env.PORT;
+    const PORT = env.PORT;
     server.listen(PORT, (error) => {
         if (error) {
             console.log('ERROR - Unable to start server.');

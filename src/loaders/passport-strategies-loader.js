@@ -1,7 +1,7 @@
 const JwtStrategy = require('passport-jwt').Strategy;
 const User = require('../models/users/user');
 
-const process = require('process');
+const env = require('../env');
 
 const setupPassportStrategies = (passport) => {
     const extractJwtFromCookiesField = (field) => {
@@ -16,7 +16,7 @@ const setupPassportStrategies = (passport) => {
 
     const options = {
         jwtFromRequest: extractJwtFromCookiesField('jwt'),
-        secretOrKey: process.env.JWTPrivateKey,
+        secretOrKey: env.JWTPrivateKey,
     };
 
     passport.use(

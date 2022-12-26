@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="Idea">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="Removed junk">
+      <change afterPath="$PROJECT_DIR$/src/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/mailer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/database.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/mailer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/mongo-logger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/passport-strategies-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/passport-strategies-loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/start-server-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/start-server-loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/auth-repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/auth-repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sequelize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sequelize.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="46dee76066ffa5a0b8e88be266127aecaad537dd" />
+        <entry key="$PROJECT_DIR$" value="486f0709f87c131c2ce79f149eeb1eee3d35db5d" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,7 +46,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1671898956" />
+                    <option name="lastUsedInstant" value="1672024886" />
                   </RecentBranch>
                 </list>
               </option>
@@ -55,25 +68,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/witaw/Documents/!Projects/referendum2022",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\witaw\\Documents\\!Projects\\Trainee-eShop\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/witaw/Documents/!Projects/referendum2022&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\witaw\\Documents\\!Projects\\Trainee-eShop\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\witaw\Documents\!Projects\Trainee-eShop" />
@@ -140,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672024249113</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Removed junk">
+      <created>1672026177221</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672026177221</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +186,8 @@
     <MESSAGE value="Use postgres instead of MySQL" />
     <MESSAGE value="File renaming refactor" />
     <MESSAGE value="Idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="Idea" />
+    <MESSAGE value="Proper line endings" />
+    <MESSAGE value="Removed junk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed junk" />
   </component>
 </project>

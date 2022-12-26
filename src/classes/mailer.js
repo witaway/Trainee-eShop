@@ -1,22 +1,22 @@
 const nodemailer = require('nodemailer');
-const mailerConfig = require('../config/mailer.json');
+const env = require('../env');
 
 class Mailer {
     constructor() {
         this.transporter = nodemailer.createTransport(
             {
                 pool: true,
-                maxConnections: 10,
-                host: mailerConfig.hostName,
-                port: mailerConfig.port,
-                secure: mailerConfig.secure,
+                maxConnections: env.MAILER_MAX_CONNECTIONS,
+                host: env.MAILER_HOSTNAME,
+                port: env.MAILER_PORT,
+                secure: env.MAILER_USE_SECURED_CONNECTION,
                 auth: {
-                    user: mailerConfig.email,
-                    pass: mailerConfig.password,
+                    user: env.MAILER_AUTH_EMAIL,
+                    pass: env.MAILER_AUTH_PASSWORD,
                 },
             },
             {
-                from: `${mailerConfig.siteName} <${mailerConfig.email}>`,
+                from: `${env.MAILER_SITE_NAME} <${env.MAILER_AUTH_EMAIL}>`,
             },
         );
     }

@@ -14,6 +14,12 @@ const superLoader = async (server) => {
         message: '.env read successfully',
     });
 
+    // Checks environment variables on init
+    require('../env');
+    createInfo({
+        message: 'Environment variables checked successfully',
+    });
+
     // Makes all database stuff, loads models and associations between them
     // Also only after connect() you can export anything from /models
     // with confidence that everything will be fine

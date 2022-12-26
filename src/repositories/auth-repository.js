@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const process = require('process');
+const env = require('../env');
 
 class AuthRepository {
     static async loginById(userId) {
@@ -7,7 +7,7 @@ class AuthRepository {
             {
                 id: userId,
             },
-            process.env.JWTPrivateKey,
+            env.JWTPrivateKey,
             {
                 expiresIn: 60 * 60,
             },

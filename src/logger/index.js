@@ -1,11 +1,23 @@
 const mongoose = require('mongoose');
-const config = require('../config/mongo-logger.json');
+const env = require('../env');
 const schemas = require('./schema');
 
 let connection;
 
 const connect = async () => {
-    connection = await mongoose.connect(config.url, config.options);
+    const user = env.MONGO_USER;
+    const password = env.MONGO_PASSWORD;
+    const host = env.MONGO_HOST;
+    const port = env.MONGO_PORT;
+    const collection = env.MONGO_COLLECTION;
+    await mongoose.connect(
+        `mongodb://${user}:${password}@${host}:${port}/${collection}`,
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        },
+    );
+    connection = mongoose.connection;
 };
 
 const createInfo = async (infoObject) => {
@@ -68,3 +80,4 @@ module.exports = {
 
 module.exports.createInfo = createInfo;
 module.exports.createLog = createLog;
+module.exports.createError = createError;
