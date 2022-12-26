@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="Small fix to make everything correct. &#10;Also I've added conditional mongo connection URI that depends on whether MONGO_ACCESS_CONTROL_ENABLED option is on or off">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loaders/dotenv-loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loaders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="486f0709f87c131c2ce79f149eeb1eee3d35db5d" />
+        <entry key="$PROJECT_DIR$" value="cefd99e4d08c7357c2e15c99f081c101b8875398" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,7 +35,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1672024886" />
+                    <option name="lastUsedInstant" value="1672028263" />
                   </RecentBranch>
                 </list>
               </option>
@@ -159,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672027255805</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Small fix to make everything correct. &#10;Also I've added conditional mongo connection URI that depends on whether MONGO_ACCESS_CONTROL_ENABLED option is on or off">
+      <created>1672028060973</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672028060973</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
