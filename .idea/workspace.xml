@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="Idea settings :3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="File renaming refactor">
       <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/badRequestException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/bad-request-exception.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/conflictException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/conflict-exception.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/errors/4xx/forbiddenException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/4xx/forbidden-exception.js" afterDir="false" />
@@ -20,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/src/classes/errors/5xx/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/5xx/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/errors/5xx/internalServerException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/5xx/internal-server-exception.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/errors/5xx/notImplementedException.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/errors/5xx/not-implemented-exception.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/database.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/mongoLogger.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/mongo-logger.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/statusCodeMessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/status-code-messages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/analyticsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/analytics-controller.js" afterDir="false" />
@@ -156,7 +152,7 @@
       <updated>1671898565477</updated>
       <workItem from="1671898567602" duration="447000" />
       <workItem from="1671899020089" duration="6253000" />
-      <workItem from="1671905398184" duration="9394000" />
+      <workItem from="1671905398184" duration="9520000" />
     </task>
     <task id="LOCAL-00001" summary="Little refactor of project structure">
       <created>1671899385128</created>
@@ -186,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671905867240</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Use postgres instead of MySQL">
+      <created>1672024144131</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672024144131</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +212,8 @@
     <MESSAGE value="Added linting with prettier and integrated it with eslint" />
     <MESSAGE value="Global reformat" />
     <MESSAGE value="Idea settings :3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Idea settings :3" />
+    <MESSAGE value="Use postgres instead of MySQL" />
+    <MESSAGE value="File renaming refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="File renaming refactor" />
   </component>
 </project>
