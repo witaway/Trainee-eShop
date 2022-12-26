@@ -1,4 +1,3 @@
-const initDotEnv = require('./dotenv-loader');
 const initExpressModules = require('./express-modules-loader');
 const initRoutes = require('./routes-loader');
 const initStartServer = require('./start-server-loader');
@@ -8,18 +7,6 @@ const initCron = require('../scripts/cron');
 const createInfo = require('../logger').createInfo;
 
 const superLoader = async (server) => {
-    // Loads .env to process.environment
-    initDotEnv();
-    createInfo({
-        message: '.env read successfully',
-    });
-
-    // Checks environment variables on init
-    require('../env');
-    createInfo({
-        message: 'Environment variables checked successfully',
-    });
-
     // Makes all database stuff, loads models and associations between them
     // Also only after connect() you can export anything from /models
     // with confidence that everything will be fine

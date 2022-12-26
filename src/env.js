@@ -1,4 +1,4 @@
-const { cleanEnv, str, url, email, port, host, bool, num } = require('envalid');
+const { cleanEnv, str, email, port, host, bool, num } = require('envalid');
 
 const env = cleanEnv(process.env, {
     // Port of application running
@@ -16,7 +16,7 @@ const env = cleanEnv(process.env, {
     DB_USE_LOGGING: bool(),
 
     // Auth data for mailer
-    MAILER_HOSTNAME: url(),
+    MAILER_HOSTNAME: host(),
     MAILER_PORT: port(),
     MAILER_USE_SECURED_CONNECTION: bool(),
     MAILER_MAX_CONNECTIONS: num(),
@@ -28,6 +28,7 @@ const env = cleanEnv(process.env, {
     MONGO_HOST: host(),
     MONGO_PORT: port(),
     MONGO_COLLECTION: str(),
+    MONGO_ACCESS_CONTROL_ENABLED: bool(),
     MONGO_USER: str(),
     MONGO_PASSWORD: str(),
 });

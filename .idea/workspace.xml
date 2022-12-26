@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="Removed junk">
-      <change afterPath="$PROJECT_DIR$/src/env.js" afterDir="false" />
+    <list default="true" id="68ada582-d5a8-4688-87df-c58d9f1ebb67" name="Changes" comment="Small fix to make everything correct. &#10;Also I've added conditional mongo connection URI that depends on whether MONGO_ACCESS_CONTROL_ENABLED option is on or off">
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/mailer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/database.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/mailer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/mongo-logger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaders/dotenv-loader.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/loaders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loaders/passport-strategies-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/passport-strategies-loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loaders/start-server-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaders/start-server-loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/auth-repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/auth-repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequelize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sequelize.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672026177221</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Now we store all configurations in environment variables.&#10;Also from now direct call to process.env is restricted.&#10;New best practice is to get variables from wrapper">
+      <created>1672027255805</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1672027255805</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +187,9 @@
     <MESSAGE value="Idea" />
     <MESSAGE value="Proper line endings" />
     <MESSAGE value="Removed junk" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed junk" />
+    <MESSAGE value="Now we store all configurations in environment variables.&#10;Also from now direct call to process.env is restricted.&#10;The best practice is to get variables from wrapper" />
+    <MESSAGE value="Now we store all configurations in environment variables.&#10;Also from now direct call to process.env is restricted.&#10;New best practice is to get variables from wrapper" />
+    <MESSAGE value="Small fix to make everything correct. &#10;Also I've added conditional mongo connection URI that depends on whether MONGO_ACCESS_CONTROL_ENABLED option is on or off" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small fix to make everything correct. &#10;Also I've added conditional mongo connection URI that depends on whether MONGO_ACCESS_CONTROL_ENABLED option is on or off" />
   </component>
 </project>

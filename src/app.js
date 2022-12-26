@@ -1,3 +1,8 @@
+// Load environment variables from .env if file exists
+// Then check all environment variables
+require('dotenv').config();
+require('./env');
+
 const express = require('express');
 const { createInfo, createError } = require('./logger');
 

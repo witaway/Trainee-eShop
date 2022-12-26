@@ -5,18 +5,29 @@ const schemas = require('./schema');
 let connection;
 
 const connect = async () => {
-    const user = env.MONGO_USER;
-    const password = env.MONGO_PASSWORD;
+    // Common configuration
     const host = env.MONGO_HOST;
     const port = env.MONGO_PORT;
     const collection = env.MONGO_COLLECTION;
-    await mongoose.connect(
-        `mongodb://${user}:${password}@${host}:${port}/${collection}`,
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        },
-    );
+    const accessControlEnabled = env.MONGO_ACCESS_CONTROL_ENABLED;
+
+    // Driver options
+    const options = {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    };
+
+    // connect URI
+    let connectURI;
+    if (accessControlEnabled) {
+        const user = env.MONGO_USER;
+        const password = env.MONGO_PASSWORD;
+        connectURI = `mongodb://${user}:${password}@${host}:${port}/${collection}`;
+    } else {
+        connectURI = `mongodb://${host}:${port}/${collection}`;
+    }
+
+    await mongoose.connect(connectURI, options);
     connection = mongoose.connection;
 };
 
