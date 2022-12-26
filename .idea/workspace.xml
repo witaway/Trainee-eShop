@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41480e7a-5503-4f8b-953a-fe08afcf8ad1" name="Changes" comment="Minor fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/mailer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/exceptions-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/exceptions-handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/product-repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/product-repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/product-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/product-routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user-routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/auth-schemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/auth-schemas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auth-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,25 +57,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/witaw/Documents/!Projects/referendum2022",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\witaw\\Documents\\!Projects\\Trainee-eShop\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "Docker",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/witaw/Documents/!Projects/referendum2022&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\witaw\\Documents\\!Projects\\Trainee-eShop\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Docker&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\witaw\Documents\!Projects\Trainee-eShop" />

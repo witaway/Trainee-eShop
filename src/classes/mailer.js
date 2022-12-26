@@ -3,7 +3,6 @@ const env = require('../env');
 
 class Mailer {
     constructor() {
-        this.transporter = null;
         nodemailer.createTransport(
             {
                 pool: true,
@@ -23,7 +22,6 @@ class Mailer {
     }
 
     async sendMail(email, subject, message) {
-        return;
         await this.transporter.verify();
         await this.transporter.sendMail({
             to: email,
