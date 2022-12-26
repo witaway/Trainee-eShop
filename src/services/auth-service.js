@@ -27,7 +27,7 @@ class AuthService {
     }
 
     static async loginWithUsernameAndPassword(username, password) {
-        const userWithGivenUsername = await UserRepository.getByUsernamee(
+        const userWithGivenUsername = await UserRepository.getByUsername(
             username,
         );
         if (!userWithGivenUsername) {

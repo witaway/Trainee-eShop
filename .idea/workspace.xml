@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41480e7a-5503-4f8b-953a-fe08afcf8ad1" name="Changes" comment="Fixed incorrect Joi importing">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+    <list default="true" id="41480e7a-5503-4f8b-953a-fe08afcf8ad1" name="Changes" comment="Minor fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/analytics-schemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/analytics-schemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/mailer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/exceptions-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/exceptions-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/product-repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/product-repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/product-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/product-routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user-routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/auth-schemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/auth-schemas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/auth-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +101,7 @@
       <workItem from="1671898567602" duration="447000" />
       <workItem from="1671899020089" duration="6253000" />
       <workItem from="1671905398184" duration="9639000" />
-      <workItem from="1672031341247" duration="2715000" />
+      <workItem from="1672031341247" duration="8812000" />
     </task>
     <task id="LOCAL-00001" summary="Little refactor of project structure">
       <created>1671899385128</created>
@@ -174,7 +180,35 @@
       <option name="project" value="LOCAL" />
       <updated>1672034832526</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed incorrect Joi importing">
+      <created>1672034881634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672034881634</updated>
+    </task>
+    <task id="LOCAL-00013" summary="It's better not to include .env to image">
+      <created>1672034896777</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1672034896777</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Have done docker-compose.yml">
+      <created>1672034921626</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1672034921626</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Connected docker to IDE">
+      <created>1672034930494</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1672034930494</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +240,10 @@
     <MESSAGE value="Now we store all configurations in environment variables.&#10;Also from now direct call to process.env is restricted.&#10;New best practice is to get variables from wrapper" />
     <MESSAGE value="Small fix to make everything correct. &#10;Also I've added conditional mongo connection URI that depends on whether MONGO_ACCESS_CONTROL_ENABLED option is on or off" />
     <MESSAGE value="Fixed incorrect Joi importing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed incorrect Joi importing" />
+    <MESSAGE value="It's better not to include .env to image" />
+    <MESSAGE value="Have done docker-compose.yml" />
+    <MESSAGE value="Connected docker to IDE" />
+    <MESSAGE value="Minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes" />
   </component>
 </project>

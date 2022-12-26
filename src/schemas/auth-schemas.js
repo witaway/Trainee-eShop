@@ -19,7 +19,7 @@ module.exports = {
             username,
             email,
             password,
-        }).xor('username', 'password'),
+        }).xor('username', 'email'),
         params: Joi.object({}),
     }),
 

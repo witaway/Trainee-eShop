@@ -9,7 +9,7 @@ const schemas = require('../schemas/product-schemas');
 
 router.use('/:id/mark/', MarkRouter);
 
-router.get('/', validator(schemas.getList), ProductController.getList);
+router.get('/', validator(schemas.getWithList), ProductController.getList);
 router.get('/:id', validator(schemas.getByID), ProductController.getByID);
 router.delete(
     '/:id',

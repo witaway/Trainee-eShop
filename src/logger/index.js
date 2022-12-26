@@ -15,6 +15,7 @@ const connect = async () => {
     const options = {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        autoIndex: false,
     };
 
     // connect URI

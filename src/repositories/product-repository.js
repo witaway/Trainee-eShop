@@ -80,6 +80,7 @@ class ProductRepository {
                 //And if I ask some column in include it WILL add prefix tablename!
                 attributes: [],
                 where: {
+                    // Todo: fix bug with GET /products loool
                     productId: sequelize.col('product.id'),
                 },
                 required: false,

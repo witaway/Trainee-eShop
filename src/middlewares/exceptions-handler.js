@@ -4,9 +4,8 @@ const ResponseFormat = require('../helpers/response-format');
 const createError = require('../logger').createError;
 
 // eslint-disable-next-line no-unused-vars
-const exceptionsHandler = async (err, req, res) => {
-    await createError(req, err);
-
+const exceptionsHandler = async (err, req, res, next) => {
+    await createError(res, err);
     //If it's expected exception with defined http code
     if (Object.values(ReasonPhrases).includes(err.name)) {
         // From my messages collection OR from standart reason messages list

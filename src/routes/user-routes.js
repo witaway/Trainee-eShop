@@ -8,7 +8,7 @@ const deletionRequestsRouter = require('./deletion-request-routes');
 const rolesRouter = require('./role-routes');
 
 const validator = require('../middlewares/validator');
-const schemas = require('../schemas/role-schemas');
+const schemas = require('../schemas/user-schemas');
 
 router.use('/requests/', admin, deletionRequestsRouter);
 router.use('/roles/', admin, rolesRouter);

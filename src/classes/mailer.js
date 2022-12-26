@@ -3,7 +3,8 @@ const env = require('../env');
 
 class Mailer {
     constructor() {
-        this.transporter = nodemailer.createTransport(
+        this.transporter = null;
+        nodemailer.createTransport(
             {
                 pool: true,
                 maxConnections: env.MAILER_MAX_CONNECTIONS,
@@ -22,6 +23,7 @@ class Mailer {
     }
 
     async sendMail(email, subject, message) {
+        return;
         await this.transporter.verify();
         await this.transporter.sendMail({
             to: email,
