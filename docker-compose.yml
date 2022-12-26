@@ -1,0 +1,99 @@
+version: '3.8'
+services:
+
+  # These are the configurations for our Node app
+  # When Docker Compose starts this container it will automatically
+  # use the Dockerfile in the directory to configure it
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: api
+    depends_on:
+      - postgres
+      - mongodb
+      - pgadmin-compose
+    ports:
+      - "8080:8080"
+    environment:
+        # Port of application running
+      - PORT=8080
+        # Private key for JWT signing
+      - JWTPrivateKey=secret
+        # Auth data for database
+      - DB_NAME=eshop
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - DB_HOST=postgres
+      - DB_DIALECT=postgres
+      - DB_USE_LOGGING=false
+        # Auth data for mailer
+      - MAILER_HOSTNAME=mail.yandex.ru
+      - MAILER_PORT=465
+      - MAILER_USE_SECURED_CONNECTION=true
+      - MAILER_MAX_CONNECTIONS=10
+      - MAILER_AUTH_EMAIL=eshopTesting@cock.li
+      - MAILER_AUTH_PASSWORD=eshopTesting
+      - MAILER_SITE_NAME=eShop-catalogue
+        # Auth data for mongo logger
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+      - MONGO_COLLECTION=eshop
+      - MONGO_ACCESS_CONTROL_ENABLED=false
+      - MONGO_USER=root
+      - MONGO_PASSWORD=password
+
+    networks:
+      - app-network
+
+  # This is the configuration for our PostgreSQL database container
+  # Note the `postgres` name is important, in out Node app when we refer
+  # to  `host: "postgres"` that value is mapped on the network to the
+  # address of this container.
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=eshop
+    ports:
+      - "5432:5432"
+    #volumes:
+      # When the PostgresSQL container is started it will run any scripts
+      # provided in the `docker-entrypoint-initdb.d` directory, this connects
+      # our seed file to that directory so that it gets run
+      # - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
+    networks:
+      - app-network
+
+  # PostgreSQL pgAdmin panel accessible at http://localhost:16543/
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "placeholder@example.com"
+      PGADMIN_DEFAULT_PASSWORD: "fakepassword123!"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=eshop
+      - MONGO_INITDB_USERNAME=root
+      - MONGO_INITDB_PASSWORD=password
+    ports:
+      - 27017:27017
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
