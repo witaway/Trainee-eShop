@@ -1,8 +1,8 @@
 {
-    "database": "onlineshop",
-    "username": "root",
+    "database": "eshop",
+    "username": "postgres",
     "password": "password",
     "host":     "localhost",
-    "dialect":  "mysql",
+    "dialect":  "postgres",
     "logging":  true
 }

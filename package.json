@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "node src/app",
+    "start": "node src/app",
     "lint": "eslint --fix --ext .js,.jsx ."
   },
   "author": "",
@@ -21,10 +21,11 @@
     "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.14",
-    "mysql2": "^2.2.5",
     "nodemailer": "^6.4.17",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
