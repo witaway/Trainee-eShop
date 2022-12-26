@@ -1,4 +1,4 @@
-const ResponseFormat = require('../helpers/responseFormat');
+const ResponseFormat = require('../helpers/response-format');
 
 const validator = (schema) => {
     return function (req, res, next) {

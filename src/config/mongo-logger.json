@@ -1,5 +1,5 @@
 {
-    "url": "mongodb://127.0.0.1:27017/eShop",
+    "url": "mongodb://127.0.0.1:27017/eshop",
     "options": {
         "useNewUrlParser": true,
         "useUnifiedTopology": true

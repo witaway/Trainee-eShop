@@ -1,10 +1,10 @@
 const Router = require('express').Router;
 const router = Router();
 
-const DeletionRequestController = require('../controllers/deletionRequestsController');
+const DeletionRequestController = require('../controllers/deletion-requests-controller');
 
 const validator = require('../middlewares/validator');
-const schemas = require('../schemas/deletionRequestsSchemas');
+const schemas = require('../schemas/deletion-requests-schemas');
 
 router.get(
     '/',

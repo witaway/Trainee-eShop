@@ -1,6 +1,6 @@
-const MarkRepository = require('../repositories/markRepository');
-const ProductRepository = require('../repositories/productRepository');
-const UserRepository = require('../repositories/userRepository');
+const MarkRepository = require('../repositories/mark-repository');
+const ProductRepository = require('../repositories/product-repository');
+const UserRepository = require('../repositories/user-repository');
 
 const { NotFoundException } = require('../classes/errors/4xx');
 

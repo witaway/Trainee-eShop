@@ -1,5 +1,5 @@
-const AuthRepository = require('../repositories/authRepository');
-const UserRepository = require('../repositories/userRepository');
+const AuthRepository = require('../repositories/auth-repository');
+const UserRepository = require('../repositories/user-repository');
 
 const bcrypt = require('bcryptjs');
 

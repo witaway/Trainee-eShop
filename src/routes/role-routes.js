@@ -1,10 +1,10 @@
 const Router = require('express').Router;
 const router = Router();
 
-const RoleController = require('../controllers/roleController');
+const RoleController = require('../controllers/role-controller');
 
 const validator = require('../middlewares/validator');
-const schemas = require('../schemas/roleSchemas');
+const schemas = require('../schemas/role-schemas');
 
 router.post('/', validator(schemas.createRole), RoleController.createRole);
 router.get(

@@ -1,6 +1,6 @@
 const { ReasonPhrases, StatusCodes } = require('http-status-codes');
-const statusCodeMessages = require('../constants/statusCodeMessages');
-const ResponseFormat = require('../helpers/responseFormat');
+const statusCodeMessages = require('../constants/status-code-messages');
+const ResponseFormat = require('../helpers/response-format');
 const createError = require('../logger').createError;
 
 // eslint-disable-next-line no-unused-vars

@@ -1,6 +1,6 @@
-const ProductService = require('../services/productService');
+const ProductService = require('../services/product-service');
 
-const ResponseFormat = require('../helpers/responseFormat');
+const ResponseFormat = require('../helpers/response-format');
 
 class ProductController {
     static async create(req, res) {

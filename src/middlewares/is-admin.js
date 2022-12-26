@@ -1,4 +1,4 @@
-const RoleService = require('../services/roleService');
+const RoleService = require('../services/role-service');
 const { ForbiddenException } = require('../classes/errors/4xx/');
 
 const isAdmin = async (req, res, next) => {

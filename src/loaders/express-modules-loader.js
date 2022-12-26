@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-const setupPassportStrategies = require('./passportStrategiesLoader');
+const setupPassportStrategies = require('./passport-strategies-loader');
 
 const initExpressModules = (server) => {
     // This module solves problem with unhandled promise rejection

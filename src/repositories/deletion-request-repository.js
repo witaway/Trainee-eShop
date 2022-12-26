@@ -1,4 +1,4 @@
-const DeletionRequest = require('../models/users/deletionRequest');
+const DeletionRequest = require('../models/users/deletion-request');
 
 class DeletionRequestRepository {
     static async create(userID) {

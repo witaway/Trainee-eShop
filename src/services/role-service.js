@@ -1,4 +1,4 @@
-const RoleRepository = require('../repositories/roleRepository');
+const RoleRepository = require('../repositories/role-repository');
 const {
     NotFoundException,
     ConflictException,

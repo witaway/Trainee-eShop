@@ -1,7 +1,7 @@
 const CronJob = require('cron').CronJob;
 
-const DeletionRequest = require('../models/users/deletionRequest');
-const DeletionRequestService = require('../services/deletionRequestService');
+const DeletionRequest = require('../models/users/deletion-request');
+const DeletionRequestService = require('../services/deletion-request-service');
 const Op = require('sequelize').Op;
 
 const createInfo = require('../logger').createInfo;

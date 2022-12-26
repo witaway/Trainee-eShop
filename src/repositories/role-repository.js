@@ -1,5 +1,5 @@
 const Role = require('../models/rolesSystem/role');
-const UsersRoles = require('../models/rolesSystem/usersRoles');
+const UsersRoles = require('../models/rolesSystem/users-roles');
 
 class RoleRepository {
     static async createRole(roleObject) {

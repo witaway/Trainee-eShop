@@ -1,14 +1,14 @@
 const Router = require('express').Router;
 const router = Router();
 
-const admin = require('../middlewares/isAdmin');
+const admin = require('../middlewares/is-admin');
 
-const UserController = require('../controllers/userController');
-const deletionRequestsRouter = require('./deletionRequestRoutes');
-const rolesRouter = require('./roleRoutes');
+const UserController = require('../controllers/user-controller');
+const deletionRequestsRouter = require('./deletion-request-routes');
+const rolesRouter = require('./role-routes');
 
 const validator = require('../middlewares/validator');
-const schemas = require('../schemas/roleSchemas');
+const schemas = require('../schemas/role-schemas');
 
 router.use('/requests/', admin, deletionRequestsRouter);
 router.use('/roles/', admin, rolesRouter);

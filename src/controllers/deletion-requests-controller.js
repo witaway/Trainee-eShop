@@ -1,6 +1,6 @@
-const DeletionRequestService = require('../services/deletionRequestService');
+const DeletionRequestService = require('../services/deletion-request-service');
 
-const ResponseFormat = require('../helpers/responseFormat');
+const ResponseFormat = require('../helpers/response-format');
 
 class DeletionRequestController {
     static async getRequestsList(req, res) {

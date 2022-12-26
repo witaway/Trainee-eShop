@@ -1,11 +1,11 @@
-const BadRequestException = require('./badRequestException');
-const ConflictException = require('./conflictException');
-const GoneException = require('./goneExcpetion');
-const NotFoundException = require('./notFoundException');
-const RetryWithException = require('./retryWithException');
-const UnauthorizedException = require('./unauthorizedException');
-const UnprocessableEntityException = require('./unprocessableEntityException');
-const ForbiddenException = require('./forbiddenException');
+const BadRequestException = require('./bad-request-exception');
+const ConflictException = require('./conflict-exception');
+const GoneException = require('./gone-excpetion');
+const NotFoundException = require('./not-found-exception');
+const RetryWithException = require('./retry-with-exception');
+const UnauthorizedException = require('./unauthorized-exception');
+const UnprocessableEntityException = require('./unprocessable-entity-exception');
+const ForbiddenException = require('./forbidden-exception');
 
 module.exports = {
     ForbiddenException,

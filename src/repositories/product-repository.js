@@ -1,5 +1,5 @@
 const Product = require('../models/products/product');
-const ProductsMarks = require('../models/products/productsMarks');
+const ProductsMarks = require('../models/products/products-marks');
 
 const sequelize = require('../sequelize').sequelize;
 const { Op, Sequelize } = require('sequelize');

@@ -3,10 +3,10 @@ const router = Router({
     mergeParams: true,
 });
 
-const MarkController = require('../controllers/markController');
+const MarkController = require('../controllers/mark-controller');
 
 const validator = require('../middlewares/validator');
-const MarksSchemas = require('../schemas/markSchemas');
+const MarksSchemas = require('../schemas/mark-schemas');
 
 router.get('/', validator(MarksSchemas.get), MarkController.get);
 router.post('/', validator(MarksSchemas.set), MarkController.set);

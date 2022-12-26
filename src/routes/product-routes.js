@@ -1,11 +1,11 @@
 const Router = require('express').Router;
 const router = Router();
 
-const ProductController = require('../controllers/productController');
-const MarkRouter = require('./markRoutes');
+const ProductController = require('../controllers/product-controller');
+const MarkRouter = require('./mark-routes');
 
 const validator = require('../middlewares/validator');
-const schemas = require('../schemas/productSchemas');
+const schemas = require('../schemas/product-schemas');
 
 router.use('/:id/mark/', MarkRouter);
 

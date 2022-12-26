@@ -1,5 +1,5 @@
-const RoleService = require('../services/roleService');
-const ResponseFormat = require('../helpers/responseFormat');
+const RoleService = require('../services/role-service');
+const ResponseFormat = require('../helpers/response-format');
 
 class RoleController {
     static async createRole(req, res) {

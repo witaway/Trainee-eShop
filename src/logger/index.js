@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const config = require('../config/mongoLogger.json');
+const config = require('../config/mongo-logger.json');
 const schemas = require('./schema');
 
 let connection;

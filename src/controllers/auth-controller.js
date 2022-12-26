@@ -1,8 +1,8 @@
-const AuthService = require('../services/authService');
-const UserService = require('../services/userService');
+const AuthService = require('../services/auth-service');
+const UserService = require('../services/user-service');
 
 const Mailer = require('../classes/mailer');
-const ResponseFormat = require('../helpers/responseFormat');
+const ResponseFormat = require('../helpers/response-format');
 
 class AuthController {
     static async register(req, res) {

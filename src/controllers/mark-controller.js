@@ -1,6 +1,6 @@
-const MarkService = require('../services/markService');
+const MarkService = require('../services/mark-service');
 
-const ResponseFormat = require('../helpers/responseFormat');
+const ResponseFormat = require('../helpers/response-format');
 
 class MarkController {
     static async get(req, res) {

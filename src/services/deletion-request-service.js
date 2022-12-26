@@ -1,5 +1,5 @@
-const DeletionRequestRepository = require('../repositories/deletionRequestRepository');
-const UserService = require('../services/userService');
+const DeletionRequestRepository = require('../repositories/deletion-request-repository');
+const UserService = require('./user-service');
 
 const Mailer = require('../classes/mailer');
 const {

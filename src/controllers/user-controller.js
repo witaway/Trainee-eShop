@@ -1,9 +1,9 @@
-const UserService = require('../services/userService');
-const RoleService = require('../services/roleService');
-const DeletionRequestService = require('../services/deletionRequestService');
+const UserService = require('../services/user-service');
+const RoleService = require('../services/role-service');
+const DeletionRequestService = require('../services/deletion-request-service');
 
 const Mailer = require('../classes/mailer');
-const ResponseFormat = require('../helpers/responseFormat');
+const ResponseFormat = require('../helpers/response-format');
 
 class UserController {
     static async create(req, res) {

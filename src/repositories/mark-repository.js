@@ -1,4 +1,4 @@
-const ProductsMarks = require('../models/products/productsMarks');
+const ProductsMarks = require('../models/products/products-marks');
 const sequelize = require('../sequelize').sequelize;
 
 class MarkRepository {

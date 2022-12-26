@@ -1,5 +1,5 @@
-const InternalServerException = require('./internalServerException');
-const NotImplementedException = require('./notImplementedException');
+const InternalServerException = require('./internal-server-exception');
+const NotImplementedException = require('./not-implemented-exception');
 
 module.exports = {
     InternalServerException,

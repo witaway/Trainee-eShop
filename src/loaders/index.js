@@ -1,7 +1,7 @@
-const initDotEnv = require('./dotenvLoader');
-const initExpressModules = require('./expressModulesLoader');
-const initRoutes = require('./routesLoader');
-const initStartServer = require('./startServerLoader');
+const initDotEnv = require('./dotenv-loader');
+const initExpressModules = require('./express-modules-loader');
+const initRoutes = require('./routes-loader');
+const initStartServer = require('./start-server-loader');
 const connect = require('../sequelize').connect;
 const initCron = require('../scripts/cron');
 

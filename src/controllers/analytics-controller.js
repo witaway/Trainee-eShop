@@ -2,7 +2,7 @@ const sequelize = require('../sequelize').sequelize;
 const QueryTypes = require('sequelize').QueryTypes;
 
 const { NotFoundException } = require('../classes/errors/4xx');
-const ResponseFormat = require('../helpers/responseFormat');
+const ResponseFormat = require('../helpers/response-format');
 
 class AnalyticsController {
     static async getProduct(req, res) {

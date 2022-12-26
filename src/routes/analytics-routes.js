@@ -1,10 +1,10 @@
 const Router = require('express').Router;
 const router = Router();
 
-const AnalyticsController = require('../controllers/analyticsController');
+const AnalyticsController = require('../controllers/analytics-controller');
 
 const validator = require('../middlewares/validator');
-const schemas = require('../schemas/analyticsSchemas');
+const schemas = require('../schemas/analytics-schemas');
 
 router.get(
     '/getProduct/:year/:month',

@@ -1,4 +1,4 @@
-const UserRepository = require('../repositories/userRepository');
+const UserRepository = require('../repositories/user-repository');
 const {
     ConflictException,
     NotFoundException,
